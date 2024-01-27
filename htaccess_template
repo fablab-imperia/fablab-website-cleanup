@@ -1,0 +1,28 @@
+Header set Referrer-Policy "no-referrer"
+Header set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"
+Header set Content-Security-Policy "script-src 'self'"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header set X-Frame-Options "DENY"
+Header set X-Content-Type-Options "nosniff"
+
+<FilesMatch "^(img_upload\.php|page_create\.php|page_edit\.php)$">
+AuthType basic
+AuthName "zona admin"
+AuthUserFile percorso_assoluto_del_file_htpasswd
+Require valid-user
+</FilesMatch>
+
+// Blocca cartella .git, se presente
+RedirectMatch 404 /\.git
+
+// Blocco intervalli IP di GPT https://openai.com/gptbot-ranges.txt
+Order Allow,Deny
+Deny from 52.230.152.0/24
+Deny from 52.233.106.0/24
+// Blocco IP GPTuserbot https://platform.openai.com/docs/plugins/bot
+Deny from 23.98.142.176/28
+Deny from 40.84.180.224/28
+Deny from 13.65.240.240/28
+Allow from all
+
+

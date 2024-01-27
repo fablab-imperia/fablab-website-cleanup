@@ -1,0 +1,10 @@
+/* Carico font */
+@font-face {
+    font-family: "Montserrat";
+    src: url("/assets/font/montserrat-latin-wght-normal.bb2f9008.woff2");
+}
+
+@font-face {
+    font-family: "Interlatin";
+    src: url("/assets/font/inter-latin-wght-normal.88df0b5a.woff2");
+}
