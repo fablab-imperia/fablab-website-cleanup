@@ -7,10 +7,26 @@
     --text: #d1d5db;
     --gray-text:#94a3b8;
     --navbar-background:rgba(55, 84, 133, 0.9);
-    --small-hero-color:rgb(147, 197, 253);
+    --text-highlight-color:rgb(147, 197, 253);
     --radius: 0.5rem;
 
     --padding-normal: 1rem;
+    --padding-large: 2rem;
+    --padding-xl:4rem;
+
+    --blur-background: 5px;
+}
+
+/* Font size */
+:root
+{
+    --font-size-ultra-xxl: 3.75rem;
+    --font-size-xxl: 1.5rem;
+    --font-size-xl: 1.25rem;
+    --font-size-l: 1.125rem;
+    --font-size-m: 1rem;
+    --font-size-s: 0.87rem;
+    --font-size-xs: 0.75rem;
 }
 
 /* Normalizza */
@@ -29,66 +45,46 @@ body
 
 h1
 {
-    font-size: xx-large;
+    font-size: var(--font-size-ultra-xxl);
+}
+
+h2
+{
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+}
+h3
+{
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+}
+p,li
+{
+    font-size: var(--font-size-l);
+    color: var(--gray-text);
+    line-height: 1.75rem;
 }
 
 
-/* NAVBAR */
-nav
+
+/* Sezioni esempi in tutte le pagine,
+direttamente sotto al hero
+ */
+section h2 > small
 {
-    background-color: var(--navbar-background);
-    backdrop-filter: blur(5px);
-    padding: 0.5rem;
-    font-family: "Montserrat";
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-
-    font-size: smaller;
-    z-index: 1;
-}
-nav a
-{
-    color: var(--text-light);
-    text-decoration: none;
+    font-size: var(--font-size-l);
+    color: var(--text-highlight-color);
+    font-weight: normal;
+    display: block;
+    margin-bottom: 1em;
 }
 
 
-nav img
+hr
 {
-    width: 64px;
-}
-.navbar-menu
-{
-    display:flex;
-    align-items:center;
-    /* margin: 1rem; */
-}
-.navbar-menu > p, .navbar-menu > a
-{
-    color: var(--text);
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
-    font-weight: 600;
-}
-.navbar-menu > a:hover
-{
-    background-color: var(--background-color);
-    border-radius: var(--radius);
-}
-.navbar-title
-{
-    display:flex;
-    align-items:center;
-    font-size: larger;
-    color:var(--text-light);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-color: var(--card-border-color);
 }
 
 
@@ -106,10 +102,11 @@ nav img
     text-align: center;
     padding: 0.875rem 1.5rem;
     background-color: #00000000;
+    font-size: var(--font-size-m);
 }
 .btn:hover,.btn.btn-primary:hover
 {
-    background-color: var(--navbar-background);
+    background-color: var(--background-color);
 }
 .btn.btn-primary
 {
@@ -119,11 +116,11 @@ nav img
     color: var(--text-light);
 }
 
-.corner
+.rounded
 {
     border-radius: var(--radius);
 }
-img.corner
+img.rounded
 {
     overflow: hidden;
 }
@@ -131,6 +128,18 @@ img
 {
     width: 100%;
     height: auto;
+}
+img.square
+{
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+img.wide
+{
+    aspect-ratio: calc(16.0/9.0);
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .center
@@ -145,14 +154,24 @@ img
 footer p,footer a
 {
     color: var(--text);
+    font-size: var(--font-size-s);
+}
+footer h2 > a
+{
+    font-size: var(--font-size-xl);
+    font-weight: bold;
     text-decoration: none;
 }
 
 footer p.imprint
 {
     text-align: center;
-    font-size: smaller;
+    font-size: var(--font-size-xs);
     color: var(--gray-text);
+}
+p.imprint a
+{
+    font-size: var(--font-size-xs);
 }
 footer
 {
@@ -182,10 +201,6 @@ main
     padding-bottom: 6rem;
 }
 
-p
-{
-    color: var(--text);
-}
 section
 {
     padding-top: var(--padding-normal);
@@ -209,29 +224,13 @@ section
     border-radius: var(--radius);
     border-color: var(--card-border-color);
 
-    padding: var(--padding-normal);
+    padding: var(--padding-large);
     margin: var(--padding-normal);
 }
 
 .card-opaque
 {
     background-color: var(--background-color);
-}
-
-.titoletto
-{
-    font-weight: 700;
-    font-size: larger;
-}
-
-.small-text
-{
-    font-size: 10pt;
-}
-
-.muted-text
-{
-    color: var(--gray-text);
 }
 
 
@@ -257,18 +256,22 @@ pagina */
 }
 .hero small
 {
-    color: var(--small-hero-color);
     font-weight: bold;
-    font-size: larger;
+    font-size: var(--font-size-m);
+    letter-spacing: 0.1em;
+    color: var(--text-highlight-color);
 }
 .hero h1
 {
     margin-top: 1rem;
-    font-size: 40pt;
+    font-size: 50pt;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat';
 }
 .hero > p
 {
-    font-size: 15pt;
+    font-size: var(--font-size-xl);
+    color: var(--text);
 }
 .hero-buttons
 {

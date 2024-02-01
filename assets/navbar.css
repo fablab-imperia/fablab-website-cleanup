@@ -1,0 +1,92 @@
+
+/* NAVBAR */
+nav
+{
+    background-color: var(--navbar-background);
+    backdrop-filter: blur(var(--blur-background));
+    padding: 0.5rem;
+    padding-right: 1rem;
+    font-family: "Montserrat";
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    font-size: var(--font-size-m);
+    z-index: 1;
+}
+nav a
+{
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+
+nav img
+{
+    width: 4rem;
+}
+.navbar-menu
+{
+    display:flex;
+    align-items:center;
+    /* margin: 1rem; */
+}
+#nav_toggle_checkbox:checked + .navbar-menu
+{
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    right: 0px;
+    top: 5rem;
+    background-color: var(--navbar-background);
+    width: 100vw;
+    backdrop-filter: blur(var(--blur-background));
+    height: calc(100vh - 5rem);
+}
+.navbar-menu > p, .navbar-menu > a
+{
+    color: var(--text);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+.navbar-menu > a:hover, nav label:hover
+{
+    background-color: var(--background-color);
+    border-radius: var(--radius);
+}
+.navbar-title
+{
+    display:flex;
+    align-items:center;
+    font-size: var(--font-size-xl);
+    color:var(--text-light);
+}
+.navbar-title > img
+{
+    object-fit: contain;
+}
+
+/* Pulsante menu navbar */
+#nav_toggle_checkbox
+{
+    display: none;
+}
+#hamburger-menu-icon
+{
+    padding: 0.5rem;
+    width: var(--font-size-m);
+    height: auto;
+    margin: 0.5rem;
+    box-sizing: content-box;
+    border-radius: var(--radius);
+    border-color: var(--text);
+}
