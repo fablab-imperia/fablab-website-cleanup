@@ -12,9 +12,9 @@
                 <p>ARCI Il Campo delle Fragole - Viale Matteotti, 31 - 18100 Imperia (IM)</p>
                 <p>Sabato e domenica pomeriggio (telefonare per disponibilità e conferme)</p>
                 <p>
-                    Valerio:<a href="tel:+393293127565">+39 329 31.27.565</a>
+                    Valerio:&nbsp;<a href="tel:+393293127565">+39 329 31.27.565</a>
                     <br>
-                    Stefano <a href="tel:+393493140191">+39 349 31.40.191 </a>
+                    Stefano:&nbsp;<a href="tel:+393493140191">+39 349 31.40.191 </a>
                 </p>
                 <p>
                     Email:&nbsp;<a href="mailto:info@fablabimperia.org">info@fablabimperia.org</a>

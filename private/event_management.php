@@ -23,6 +23,15 @@ class Event
         $this->where_address = $db_row["where_address"];
         $this->where_map_url = $db_row["where_map_url"];
     }
+
+    function get_datetime(): \DateTime
+    {
+        $d = new \DateTime();
+        $d->setTimestamp(
+            intval($this->event_timestamp)
+        );
+        return $d;
+    }
 }
 
 
