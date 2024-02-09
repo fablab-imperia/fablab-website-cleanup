@@ -2,11 +2,13 @@
 require "../private/header.php";
 require "../private/database.php";
 
+require_once "../private/Parsedown.php";
+
 $db = new \Database\Db();
 $event = $db->event_fetch_one($_GET["id"]);
 ?>
 
-<main>
+<main class="container">
 
 <h1>
     <?php echo $event->title;?>
@@ -18,7 +20,10 @@ $event = $db->event_fetch_one($_GET["id"]);
             <span class="bold">
             🗓️ Quando:
             </span>
-            <?php echo $event->get_datetime(); ?>
+            <?php echo date(
+                "j/n/Y H:i",
+                $event->event_timestamp
+            ); ?>
         </li>
         <li>
             <span class="bold">
@@ -34,6 +39,10 @@ $event = $db->event_fetch_one($_GET["id"]);
         </li>
     </ul>
 </header>
+
+<article>
+    <?php $p = new Parsedown(); echo $p->text($event->description); ?>
+</article>
 
 </main>
 

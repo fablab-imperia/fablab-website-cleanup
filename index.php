@@ -2,12 +2,6 @@
 require "private/header.php";
 ?>
 
-<?php
-require "private/database.php";
-$db = new \Database\Db();
-print_r($db->event_fetch_one(1));
-?>
-
 <div style='background-image:url("/assets/images/hero-alto.opti.webp")' class="hero-container">
     <div class="container">
         <div class="hero">
