@@ -79,9 +79,21 @@ p,li,a
 }
 
 /* Colora icone ForkAwesome */
-footer i
+i
 {
     color: var(--primary-color);
+}
+li i
+{
+    color: var(--text);
+}
+.btn>i
+{
+    color: var(--text);
+}
+.btn.btn-primary>i
+{
+    color: var(--text-light);
 }
 
 

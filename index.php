@@ -56,7 +56,7 @@ require "private/header.php";
                 </div>
 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 order-xs-1">
                 <img src="/assets/images/IMG_2557-min.jpg" alt="" class="rounded wide">
             </div>
         </div>
@@ -72,7 +72,7 @@ require "private/header.php";
                 <p>
                     I soci possono creare oggetti e progetti sia da soli, sia in gruppo, utilizzando i macchinari a loro disposizione in laboratorio.
                 </p>
-                <p>Il Fablab promuove la condivisione di conoscenze sia verso l'esterno, sia tra i soci, che imparano a vicenda aiutandosi, tramite il cosiddetto <em>peer learning</em>.</p>
+                <p>Il Fablab promuove la condivisione di conoscenze sia verso l'esterno, sia tra i soci, che imparano a vicenda aiutandosi tramite il cosiddetto <em>peer learning</em>.</p>
                 <p>
                     In più, offriamo periodicamente dei corsi strutturati per chi voglia approfondire ulteriormente l'apprendimento.
                 </p>
@@ -86,7 +86,9 @@ require "private/header.php";
     <div class="row">
         <div class="col-md-4">
             <section class="card card-opaque">
-                <h2>Uso del laboratorio</h2>
+                <i class="fa fa-social-home fa-2x"></i>
+                <h2>
+                     Uso del laboratorio</h2>
                 <p>
                     Tutti i soci possono frequentare il laboratorio negli orari di apertura e utilizzare
                     tutte le macchine e le attrezzature presenti, previo corso ove previsto.
@@ -95,7 +97,9 @@ require "private/header.php";
         </div>
         <div class="col-md-4">
             <section class="card card-opaque">
-                <h2>Vita associativa</h2>
+            <i class="fa fa-users fa-2x"></i>
+                <h2>
+                    Vita associativa</h2>
                 <p>
                     Diventando socio potrai partecipare all'organizzazione
                     di corsi ed eventi, avrai accesso ai gruppi Whatsapp/Telegram e potrai partecipare a tutte le attività
@@ -105,7 +109,9 @@ require "private/header.php";
         </div>
         <div class="col-md-4">
             <section class="card card-opaque">
-                <h2>Condivisione di conoscenze</h2>
+                <i class="fa fa-puzzle-piece fa-2x"></i>
+                <h2>
+                    Condivisione di conoscenze</h2>
                 <p>
                     I soci possono pubblicare i propri progetti sul blog del Fablab
                     per condividere i propri lavori e scambiare conoscenze

@@ -23,14 +23,29 @@
                 <p>
                 <i class="fa fa-lg fa-address-book"></i> PEC:&nbsp;<a href="mailto:fablabimperia@pec.it">fablabimperia@pec.it</a>
                 </p>
+                <p>
+                    <i class="fa fa-github fa-lg"></i> Github:&nbsp;<a href="https://github.com/fablab-imperia">fablab-imperia</a>
+                </p>
             </div>
             <div class="col-md-8">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5751.931801130716!2d8.0127440041013!3d43.87725809769747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d26ea95c9af2f7%3A0x762f784593820aec!2sFablab%20Imperia!5e0!3m2!1sen!2sit!4v1620901654444!5m2!1sen!2sit"
-                style="border:0; width:100%; height:100%;"
-                class="rounded"
-                allowfullscreen=""
-                loading="lazy"></iframe>
+            <div id="maps_placeholder" style="width:100%; height:100%;">
+                <!-- Il contenuto verrà sostituito in blocco se l'utente preme il pulsante -->
+                <div style="width:100%; height:100%;text-align:center; background-color:black; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                    <p>
+                       Google Maps carica servizi di pubblicità e cookies di tracciamento esterni.
+                    </p>
+                    <p>
+                       Di conseguenza, per proteggere i dati e la privacy dei nostri visitatori durante la navigazione, 
+                       è di norma disattivato.&nbsp; 
+                       Questo rende la tua navigazione anche molto più veloce e scattante.
+                    </p>
+                    <p>
+                       Puoi attivare la funzione mappa tramite il pulsante qui sotto.
+                    </p>
+                    <button style="width:fit-content;" class="btn">Carica mappa</button>
+                </div>
+
+            </div>
             </div>
 		</div>
         <hr>
