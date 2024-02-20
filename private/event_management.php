@@ -10,6 +10,7 @@ class Event
     public ?string $repeats;
     public string $where_address;
     public string $where_map_url;
+    public string $full_text;
 
 
     function __construct($db_row)
@@ -22,6 +23,7 @@ class Event
         $this->repeats = $db_row["repeats"];
         $this->where_address = $db_row["where_address"];
         $this->where_map_url = $db_row["where_map_url"];
+        $this->full_text = $db_row["full_text"];
     }
 
     function get_datetime(): \DateTime

@@ -1,7 +1,6 @@
 <?php namespace Database;
 
 require "event_management.php";
-require "config.php";
 
 
 class Db

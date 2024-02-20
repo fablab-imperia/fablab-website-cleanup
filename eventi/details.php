@@ -7,8 +7,8 @@ require_once "../private/Parsedown.php";
 $db = new \Database\Db();
 $event = $db->event_fetch_one($_GET["id"]);
 ?>
-
-<main class="container">
+<main>
+<div class="container">
 
 <h1>
     <?php echo $event->title;?>
@@ -41,11 +41,11 @@ $event = $db->event_fetch_one($_GET["id"]);
 </header>
 
 <article>
-    <?php $p = new Parsedown(); echo $p->text($event->description); ?>
+    <?php $p = new Parsedown(); echo $p->text($event->full_text); ?>
 </article>
 
 </main>
-
+</div>
 <?php
 require "../private/footer.php";
 ?>

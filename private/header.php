@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/assets/scroll_into_main.js"></script>
     <link rel="sitemap" href="sitemap.xml" />
     <link rel="stylesheet" href="/assets/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/assets/font_load.css">
