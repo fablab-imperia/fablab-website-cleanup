@@ -26,32 +26,28 @@
                 </p>
             </div>
             <div class="col-lg-8">
-            <div id="maps_placeholder" style="width:100%; height:100%;">
-                <!-- Il contenuto verrà sostituito in blocco se l'utente preme il pulsante -->
-                <div class="fake-map">
-                    <div class="card card-opaque" style="margin:10%;">
-                    <p>
-                       Google Maps è disattivato per rendere la navigazione scattante e 
-                       proteggere meglio la tua privacy.
-                    </p>
-                    <form style="" id="map_load_action">
-                    <h2>Carica mappa</h2>
-                        <div>
+                <div id="maps_placeholder" style="width:100%; height:100%;">
+                    <!-- Il contenuto verrà sostituito in blocco se l'utente preme il pulsante -->
+                    <div class="fake-map">
+                        <div class="card card-opaque" style="margin:10%;">
                         <p>
-                            <label style="font-weight:bold;" for="field_accept_googlemaps_cookies">Accetto i cookies di Google Maps</label>
-                            <input type="checkbox" required id="field_accept_googlemaps_cookies">
+                        Google Maps è disattivato per rendere la navigazione scattante e 
+                        proteggere meglio la tua privacy.
                         </p>
-                        
+                        <form style="" id="map_load_action">
+                        <h2>Carica mappa</h2>
+                            <div>
+                                <p>
+                                    <label style="font-weight:bold;" for="field_accept_googlemaps_cookies">Accetto i cookies di Google Maps</label>
+                                    <input type="checkbox" required id="field_accept_googlemaps_cookies">
+                                </p>
+                            
+                            </div>
+                            <button type="submit" style="width:fit-content;" class="btn">Carica mappa</button>         
+                        </form>
                         </div>
-                        
-                        <button type="submit" style="width:fit-content;" class="btn">Carica mappa</button>
-                        
-                    </form>
                     </div>
-                    
                 </div>
-
-            </div>
             </div>
 		</div>
         <hr>

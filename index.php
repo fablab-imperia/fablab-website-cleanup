@@ -127,14 +127,16 @@ require "private/header.php";
     <!-- <p>
         Contattaci per visitare il laboratorio o partecipa a uno dei prossimi eventi
     </p> -->
-    <a href="/eventi/" class="btn btn-primary">
-        <i class="fa fa-users"></i>
-        Partecipa a un evento
-    </a>
-    <a href="mailto:info@fablabimperia.org" class="btn">
-        <i class="fa fa-envelope"></i>
-        Contattaci
-    </a>
+    <div class="hero-buttons">
+        <a href="/eventi/" class="btn btn-primary">
+            <i class="fa fa-users"></i>
+            Partecipa a un evento
+        </a>
+        <a href="mailto:info@fablabimperia.org" class="btn">
+            <i class="fa fa-envelope"></i>
+            Contattaci
+        </a> 
+    </div>
     </section>
 </div>
 </main>
