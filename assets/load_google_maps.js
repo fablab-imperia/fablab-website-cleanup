@@ -9,7 +9,8 @@ allowfullscreen=""
 loading="lazy"></iframe>
 `;
 
-document.querySelector("#maps_placeholder button")
-    .addEventListener("click", ()=>{
+document.getElementById("map_load_action")
+    .addEventListener("submit", (e)=>{
+        e.preventDefault();
         document.getElementById("maps_placeholder").innerHTML = HTML_MAPS;
     });

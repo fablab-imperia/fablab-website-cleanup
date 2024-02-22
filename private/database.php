@@ -47,6 +47,30 @@ class Db
         return $resulting_array;
     }
 
+    function event_fetch_past(): array
+    {
+        $now = new \DateTime();
+        // Inizio della giornata
+        $now->setTime(0,0);
+
+        $st = $this->db_handle->prepare("SELECT * FROM EVENTS WHERE event_timestamp < ? ORDER BY event_timestamp DESC;");
+        $st->bindValue(1, $now->getTimestamp(), SQLITE3_INTEGER);
+        $res = $st->execute();
+
+        $resulting_array = [];
+
+        while($result = $res->fetchArray(SQLITE3_ASSOC))
+        {
+            $ev = new Event($result);
+            array_push(
+                $resulting_array,
+                $ev
+            );
+        }
+
+        return $resulting_array;
+    }
+
     function event_save(Event $ev)
     {
         // Se id evento è -1, vuol dire che devo aggiungerlo
@@ -56,15 +80,12 @@ class Db
             $st = $db_handle->prepare(
                 "INSERT INTO events(title, description, event_timestamp, repeats, where_address, where_map_url) VALUES (?, ?, ?, ?, ?, ?)"
             );
-            $st->bind_param(
-                "ssisss",
-                $ev->title,
-                $ev->description,
-                $ev->event_timestamp,
-                $ev->repeats,
-                $ev->where_address,
-                $ev->where_map_url
-            );
+            $st->bindValue(1, $ev->title, SQLITE3_TEXT);
+            $st->bindValue(1, $ev->description, SQLITE3_TEXT);
+            $st->bindValue(1, $ev->event_timestamp, SQLITE3_INTEGER);
+            $st->bindValue(1, $ev->repeats, SQLITE3_TEXT);
+            $st->bindValue(1, $ev->where_address, SQLITE3_TEXT);
+            $st->bindValue(1, $ev->where_map_url, SQLITE3_TEXT);
             $st->execute();
             
             $ev->id = $this->db_handle->insert_id;
@@ -86,6 +107,13 @@ class Db
             );
             $st->execute();
         }
+    }
+
+    function event_delete(int $id)
+    {
+        $st = $this->db_handle->prepare("DELETE FROM EVENTS WHERE id = ?;");
+        $st->bindValue(1, $id, SQLITE3_INTEGER);
+        $res = $st->execute();
     }
 
     function __destruct()

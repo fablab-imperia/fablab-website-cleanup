@@ -12,7 +12,7 @@ require "private/header.php";
             <p>
             Stampanti 3D, Fresatrice CNC, banco elettronica,
             componenti e attrezzi meccanici e
-            tutto l'occorrente per creare (quasi) qualsiasi cosa&#8230; insieme
+            tutto l'occorrente per creare (quasi) qualsiasi cosa&#8230; <span class="text-highlight" style="">insieme</span>
             </p>
 
             <div class="hero-buttons">
@@ -42,12 +42,12 @@ require "private/header.php";
                     <div class="col-md-6">
                         <img class="rounded wide" src="/assets/images/IMG_5350 cropped-min.jpg" alt="">
                         <h3>Creatività 2.0</h3>
-                        <ul>
-                            <li>Stampa3D</li>
-                            <li>Intaglio vinile</li>
-                            <li>Fresatura CNC</li>
-                            <li>Elettronica</li>
-                            <li>Meccanica</li>
+                        <ul class="fa-ul">
+                            <li>  <i class="fa fa-li fa-check"></i> Stampa3D</li>
+                            <li> <i class="fa fa-li fa-check"></i>Intaglio vinile</li>
+                            <li> <i class="fa fa-li fa-check"></i>Fresatura CNC</li>
+                            <li> <i class="fa fa-li fa-check"></i>Elettronica</li>
+                            <li> <i class="fa fa-li fa-check"></i>Meccanica</li>
                         </ul>
                     </div>
                     <div class="col-md-6">

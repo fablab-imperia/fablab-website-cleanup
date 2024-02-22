@@ -1,6 +1,6 @@
 <?php
-require "../private/header.php";
-require "../private/database.php";
+require '../private/header.php';
+require '../private/database.php';
 ?>
 <main>
 <div class="container">
@@ -11,45 +11,31 @@ require "../private/database.php";
 <?php
 $db = new \Database\Db();
 $events = $db->event_fetch_future();
-foreach ($events as $value)
-{
-    if ($value->repeats)
-    {
-        $repeats_string = "<li> <span class=\"bold\"> <i class=\"fa fa-fw fa-repeat\"></i> Poi si ripete:&nbsp;</span>" . $value->repeats . "</li>";
-    }
-    printf("
-    <div class=\"card card-opaque\">
-        <h1>%s</h1>
-        <header>
-            <ul>
-                <li> <span class=\"bold\"><i class=\"fa fa-fw fa-calendar\"></i> Quando:</span> %s</li>
-                %s
-                <li> <span class=\"bold\"> <i class=\"fa fa-fw fa-map-marker\"></i> Dove:</span> %s</li>
-            </ul>
-        </header>
-        <a href=\"%s\" class=\"btn btn-primary\">
-        Scopri il programma
-        </a>
-    </div>
-    ",
-    $value->title,
-    date("j/n/Y, H:i", $value->event_timestamp),
-    $repeats_string,
-    $value->where_address,
-    "/eventi/details.php?id=" . $value->id
-    );
+foreach ($events as $value) {
+    $value->render_as_card();
 }
-if (count($events)==0)
-{
-    echo "<p>";
-    echo "Nessun evento organizzato nei prossimi giorni. </p><p>Vuoi passare a trovarci? Contattaci a <a href=\"mailto:info@fablabimperia.org\" >info@fablabimperia.org</a> per informazioni sugli orari di apertura.<br> Ti aspettiamo!";
-    echo "</p>";
+if (count($events) == 0) {
+    echo '<p>';
+    echo 'Nessun evento organizzato nei prossimi giorni. </p><p>Vuoi passare a trovarci o hai un\'idea da proporci? <br> Contattaci a <a href="mailto:info@fablabimperia.org" >info@fablabimperia.org</a> per informazioni sugli orari di apertura.<br> Ti aspettiamo!';
+    echo '</p>';
 }
 ?>
+
+<hr>
+<div style="opacity:30%">
+<h1>Eventi passati</h1>
+<?php
+$events = $db->event_fetch_past();
+foreach ($events as $value) {
+    $value->render_as_card();
+}
+?>
+</div>
+
 
 </div>
 </main>
 
 <?php
-require "../private/footer.php";
+require '../private/footer.php';
 ?>

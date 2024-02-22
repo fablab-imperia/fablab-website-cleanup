@@ -1,25 +1,23 @@
-:root
-{
+:root {
     --primary-color: #5d9122;
     --background-color: #181b33;
     --card-border-color: #475569;
     --text-light: #FFFFFF;
     --text: #d1d5db;
-    --gray-text:#94a3b8;
-    --navbar-background:rgba(55, 84, 133, 0.9);
-    --text-highlight-color:rgb(147, 197, 253);
+    --gray-text: #94a3b8;
+    --navbar-background: rgba(55, 84, 133, 0.9);
+    --text-highlight-color: rgb(147, 197, 253);
     --radius: 0.5rem;
 
     --padding-normal: 1rem;
     --padding-large: 2rem;
-    --padding-xl:4rem;
+    --padding-xl: 4rem;
 
     --blur-background: 5px;
 }
 
 /* Font size */
-:root
-{
+:root {
     --font-size-ultra-xxl: 3.75rem;
     --font-size-xxl: 1.5rem;
     --font-size-xl: 1.25rem;
@@ -28,10 +26,9 @@
     --font-size-s: 0.87rem;
     --font-size-xs: 0.75rem;
 }
-@media(max-width:768px)
-{
-    :root
-    {
+
+@media(max-width:768px) {
+    :root {
         --font-size-ultra-xxl: 3rem;
         --font-size-xxl: 1.3rem;
         --font-size-xl: 1.25rem;
@@ -43,65 +40,86 @@
 }
 
 /* Normalizza */
-body
-{
+body {
     margin: 0px;
     padding: 0px;
 }
 
-body
-{
+body {
     background-color: var(--background-color);
     color: var(--text);
     font-family: "Interlatin";
 }
 
-h1
-{
+h1 {
     font-size: var(--font-size-ultra-xxl);
 }
 
-h2
-{
+h2 {
     font-size: var(--font-size-xxl);
     font-weight: bold;
 }
-h3
-{
+
+h3 {
     font-size: var(--font-size-xl);
     font-weight: 500;
 }
-p,li,a
-{
+
+p,
+li,
+a {
     font-size: var(--font-size-l);
     color: var(--gray-text);
     line-height: 1.75rem;
 }
 
 /* Colora icone ForkAwesome */
-i
-{
+i {
     color: var(--primary-color);
 }
-li i
+
+li i {
+    color: var(--primary-color);
+}
+.card li i 
 {
     color: var(--text);
 }
-.btn>i
-{
+
+.btn>i {
     color: var(--text);
 }
-.btn.btn-primary>i
-{
+
+.btn.btn-primary>i {
     color: var(--text-light);
+}
+
+.fake-map {
+    background-image: url('/assets/images/fake_map_low.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    background-blend-mode: multiply;
+    background-color: #464646;
+    
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fake-map .btn
+{
+    background-color: var(--card-border-color);
 }
 
 
 /* Sezioni esempi in tutte le pagine,
 direttamente sotto al hero
  */
-section h2 > small
-{
+section h2>small {
     font-size: var(--font-size-l);
     color: var(--text-highlight-color);
     font-weight: normal;
@@ -110,8 +128,7 @@ section h2 > small
 }
 
 
-hr
-{
+hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
     border-color: var(--card-border-color);
@@ -119,11 +136,10 @@ hr
 
 
 
-.btn
-{
+.btn {
     display: inline-block;
     text-decoration: none;
-    font-weight:600;
+    font-weight: 600;
     border-style: solid;
     border-width: 1px;
     border-radius: 2rem;
@@ -134,51 +150,50 @@ hr
     background-color: #00000000;
     font-size: var(--font-size-m);
 }
-.btn:hover,.btn.btn-primary:hover
-{
+
+.btn:hover,
+.btn.btn-primary:hover {
     background-color: var(--background-color);
 }
-.btn.btn-primary
-{
+
+.btn.btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     text-decoration: none;
     color: var(--text-light);
 }
-.btn-primary:hover
-{
+
+.btn-primary:hover {
     border-color: var(--primary-color);
     /* border-width: 1px; */
 }
 
-.rounded
-{
+.rounded {
     border-radius: var(--radius);
 }
-img.rounded
-{
+
+img.rounded {
     overflow: hidden;
 }
-img
-{
+
+img {
     width: 100%;
     height: auto;
 }
-img.square
-{
+
+img.square {
     aspect-ratio: 1;
     object-fit: cover;
     object-position: 50% 50%;
 }
-img.wide
-{
+
+img.wide {
     aspect-ratio: calc(16.0/9.0);
     object-fit: cover;
     object-position: 50% 50%;
 }
 
-.center
-{
+.center {
     text-align: center;
     width: 100%;
 }
@@ -186,48 +201,46 @@ img.wide
 
 
 /* Footer */
-footer p,footer a
-{
+footer p,
+footer a {
     color: var(--text);
     font-size: var(--font-size-s);
 }
-footer h2 > a
-{
+
+footer h2>a {
     font-size: var(--font-size-xl);
     font-weight: bold;
     text-decoration: none;
 }
 
-footer p.imprint
-{
+footer p.imprint {
     text-align: center;
     font-size: var(--font-size-xs);
     color: var(--gray-text);
 }
-p.imprint a
-{
+
+p.imprint a {
     font-size: var(--font-size-xs);
 }
-footer
-{
+
+footer {
     font-size: smaller;
     padding: var(--padding-normal);
     padding-top: 7rem;
     padding-bottom: 5rem;
 }
-.imprint a
-{
+
+.imprint a {
     color: var(--text);
 }
-footer img.logo
-{
+
+footer img.logo {
     width: 10rem;
     height: auto;
 }
 
 /* main */
-main
-{
+main {
     /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%2317335d9f' fill-opacity='0.4' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E"); */
     background-image: url("/assets/circuit-board/circuit-board.svg");
     /* padding-left: 4rem;
@@ -236,23 +249,20 @@ main
     padding-bottom: 6rem;
 }
 
-section
-{
+section {
     padding-top: var(--padding-normal);
     padding-bottom: 4rem;
 }
 
 
 /* Modificatori testo */
-.bold
-{
+.bold {
     font-weight: bold;
 }
 
 
 /* Funzioni utili */
-.card
-{
+.card {
     border-style: solid;
     border-width: 1px;
     border-radius: var(--radius);
@@ -263,16 +273,14 @@ section
     margin-bottom: var(--padding-normal);
 }
 
-.card-opaque
-{
+.card-opaque {
     background-color: var(--background-color);
 }
 
 
 /* Hero container, per l'immagine a inizio
 pagina */
-.hero-container
-{
+.hero-container {
     background-color: var(--card-border-color);
     background-position: center;
     width: 100%;
@@ -282,38 +290,56 @@ pagina */
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
-@media(max-width:768px){
-    .hero-container{
+
+@media(max-width:768px) {
+    .hero-container {
         height: 100vh;
     }
 }
 
-.hero
-{
+.hero {
     text-align: center;
     padding-top: 11rem;
     padding-bottom: 8rem;
 }
-.hero small
+.text-highlight
 {
+    font-weight: bold;
+    color: var(--text-highlight-color);
+}
+.hero small {
     font-weight: bold;
     font-size: var(--font-size-m);
     letter-spacing: 0.1em;
     color: var(--text-highlight-color);
 }
-.hero h1
-{
+
+.hero h1 {
     margin-top: 1rem;
     font-size: var(--font-size-ultra-xxl);
     margin-bottom: 1rem;
     font-family: 'Montserrat';
 }
-.hero > p
-{
+
+.hero>p {
     font-size: var(--font-size-xl);
     color: var(--text);
 }
-.hero-buttons
-{
+
+.hero-buttons {
     margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:768px){
+    .hero-buttons
+    {
+        flex-direction: column;
+    }
+}
+.hero-buttons > *
+{
+    margin: 8px;
 }

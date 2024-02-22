@@ -34,6 +34,36 @@ class Event
         );
         return $d;
     }
+
+
+    function render_as_card()
+    {
+        if ($this->repeats)
+        {
+            $repeats_string = "<li> <span class=\"bold\"> <i class=\"fa fa-fw fa-repeat\"></i> Poi si ripete:&nbsp;</span>" . $this->repeats . "</li>";
+        }
+        printf("
+        <div class=\"card card-opaque\">
+            <h1>%s</h1>
+            <header>
+                <ul>
+                    <li> <span class=\"bold\"><i class=\"fa fa-fw fa-calendar\"></i> Quando:</span> %s</li>
+                    %s
+                    <li> <span class=\"bold\"> <i class=\"fa fa-fw fa-map-marker\"></i> Dove:</span> %s</li>
+                </ul>
+            </header>
+            <a href=\"%s\" class=\"btn btn-primary\">
+            Scopri il programma
+            </a>
+        </div>
+        ",
+        $this->title,
+        date("j/n/Y, H:i", $this->event_timestamp),
+        $repeats_string,
+        $this->where_address,
+        "/eventi/details.php?id=" . $this->id
+        );
+    }
 }
 
 
