@@ -43,7 +43,7 @@ require "private/header.php";
                         <img class="rounded wide" src="/assets/images/IMG_5350 cropped-min.jpg" alt="">
                         <h3>Creatività 2.0</h3>
                         <ul class="fa-ul">
-                            <li>  <i class="fa fa-li fa-check"></i> Stampa3D</li>
+                            <li> <i class="fa fa-li fa-check"></i>Stampa3D</li>
                             <li> <i class="fa fa-li fa-check"></i>Intaglio vinile</li>
                             <li> <i class="fa fa-li fa-check"></i>Fresatura CNC</li>
                             <li> <i class="fa fa-li fa-check"></i>Elettronica</li>

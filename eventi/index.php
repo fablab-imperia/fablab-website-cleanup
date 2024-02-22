@@ -9,7 +9,7 @@ require '../private/database.php';
 </h1>
 
 <?php
-$db = new \Database\Db();
+$db = new Database();
 $events = $db->event_fetch_future();
 foreach ($events as $value) {
     $value->render_as_card();

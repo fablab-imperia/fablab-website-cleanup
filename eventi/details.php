@@ -4,7 +4,7 @@ require "../private/database.php";
 
 require_once "../private/Parsedown.php";
 
-$db = new \Database\Db();
+$db = new Database();
 $event = $db->event_fetch_one($_GET["id"]);
 ?>
 <main>

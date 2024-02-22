@@ -1,9 +1,9 @@
-<?php namespace Database;
+<?php
 
-require "event_management.php";
+require_once "event_management.php";
 
 
-class Db
+class Database
 {
     private $db_handle;
 
@@ -12,14 +12,22 @@ class Db
         $this->db_handle = new \SQLite3(__DIR__  . '/data.sqlite3');
     }
 
-    function event_fetch_one(int $id): Event
+    function event_fetch_one(int $id): ?Event
     {
         $st = $this->db_handle->prepare("SELECT * FROM EVENTS WHERE id=? LIMIT 1;");
         $st->bindValue(1, $id, SQLITE3_INTEGER);
 
-        return new Event(
-            $st->execute()->fetchArray(SQLITE3_ASSOC)
-        );
+        $res = $st->execute()->fetchArray(SQLITE3_ASSOC);
+        if ($res)
+        {
+            return new Event(
+                $res
+            );
+        }
+        else
+        {
+            return null;
+        }
     }
 
     /// Restituisce array<Event>
@@ -75,36 +83,33 @@ class Db
     {
         // Se id evento è -1, vuol dire che devo aggiungerlo
         // Se è impostato a qualcosa, devo aggiornarne i dati
-        if ($ev->id == -1)
+        if ($ev->id == -1 || !isset($ev->id))
         {
-            $st = $db_handle->prepare(
+            $st = $this->db_handle->prepare(
                 "INSERT INTO events(title, description, event_timestamp, repeats, where_address, where_map_url) VALUES (?, ?, ?, ?, ?, ?)"
             );
             $st->bindValue(1, $ev->title, SQLITE3_TEXT);
-            $st->bindValue(1, $ev->description, SQLITE3_TEXT);
-            $st->bindValue(1, $ev->event_timestamp, SQLITE3_INTEGER);
-            $st->bindValue(1, $ev->repeats, SQLITE3_TEXT);
-            $st->bindValue(1, $ev->where_address, SQLITE3_TEXT);
-            $st->bindValue(1, $ev->where_map_url, SQLITE3_TEXT);
+            $st->bindValue(2, $ev->description, SQLITE3_TEXT);
+            $st->bindValue(3, $ev->event_timestamp, SQLITE3_INTEGER);
+            $st->bindValue(4, $ev->repeats, SQLITE3_TEXT);
+            $st->bindValue(5, $ev->where_address, SQLITE3_TEXT);
+            $st->bindValue(6, $ev->where_map_url, SQLITE3_TEXT);
             $st->execute();
             
-            $ev->id = $this->db_handle->insert_id;
+            $ev->id = $this->db_handle->lastInsertRowID();
         }
         else
         {
-            $st = $db_handle->prepare(
+            $st = $this->db_handle->prepare(
                 "UPDATE events SET title=?, description=?, event_timestamp=?, repeats=?, where_address=?, where_map_url=? WHERE id=?"
             );
-            $st->bind_param(
-                "ssisssi",
-                $ev->title,
-                $ev->description,
-                $ev->event_timestamp,
-                $ev->repeats,
-                $ev->where_address,
-                $ev->where_map_url,
-                $ev->id
-            );
+            $st->bindValue(1, $ev->title, SQLITE3_TEXT);
+            $st->bindValue(2, $ev->description, SQLITE3_TEXT);
+            $st->bindValue(3, $ev->event_timestamp, SQLITE3_INTEGER);
+            $st->bindValue(4, $ev->repeats, SQLITE3_TEXT);
+            $st->bindValue(5, $ev->where_address, SQLITE3_TEXT);
+            $st->bindValue(6, $ev->where_map_url, SQLITE3_TEXT);
+            $st->bindValue(7, $ev->id, SQLITE3_INTEGER);
             $st->execute();
         }
     }
