@@ -5,21 +5,21 @@ Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 Header set X-Frame-Options "DENY"
 Header set X-Content-Type-Options "nosniff"
 
-<FilesMatch "^(img_upload\.php|page_create\.php|page_edit\.php)$">
+<FilesMatch "^admin">
 AuthType basic
 AuthName "zona admin"
 AuthUserFile percorso_assoluto_del_file_htpasswd
 Require valid-user
 </FilesMatch>
 
-// Blocca cartella .git, se presente
+# Blocca cartella .git, se presente
 RedirectMatch 404 /\.git
 
-// Blocco intervalli IP di GPT https://openai.com/gptbot-ranges.txt
+# Blocco intervalli IP di GPT https://openai.com/gptbot-ranges.txt
 Order Allow,Deny
 Deny from 52.230.152.0/24
 Deny from 52.233.106.0/24
-// Blocco IP GPTuserbot https://platform.openai.com/docs/plugins/bot
+# Blocco IP GPTuserbot https://platform.openai.com/docs/plugins/bot
 Deny from 23.98.142.176/28
 Deny from 40.84.180.224/28
 Deny from 13.65.240.240/28
