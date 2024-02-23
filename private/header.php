@@ -23,7 +23,7 @@
                     <span class="bold">FAB</span>LAB&nbsp;<span class="bold">IMPERIA</span>
                 </div>
             </a>
-            <input type="checkbox" id="nav_toggle_checkbox">
+            <input type="checkbox" id="nav_toggle_checkbox" autocomplete="off">
             <div class="navbar-menu">
                 <!-- <a href="/">Home</a> -->
                 <a href="/eventi/">Eventi</a>
