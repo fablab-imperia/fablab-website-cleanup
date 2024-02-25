@@ -319,6 +319,7 @@ pagina */
     font-size: var(--font-size-ultra-xxl);
     margin-bottom: 1rem;
     font-family: 'Montserrat';
+    color: var(--text-light);
 }
 
 .hero>p {

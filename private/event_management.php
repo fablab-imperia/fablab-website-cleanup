@@ -9,7 +9,9 @@ class Event
 
     public ?string $repeats;
     public string $where_address;
-    public string $where_map_url;
+    public ?string $where_map_url;
+    public bool $published;
+
     public string $full_text;
 
 
@@ -21,8 +23,18 @@ class Event
         $this->event_timestamp = intval($db_row["event_timestamp"]);
 
         $this->repeats = $db_row["repeats"];
+        if ($this->repeats === "")
+        {
+            $this->repeats = null;
+        }
         $this->where_address = $db_row["where_address"];
         $this->where_map_url = $db_row["where_map_url"];
+        if ($this->where_map_url === "")
+        {
+            $this->where_map_url = null;
+        }
+
+        $this->published = boolval($db_row["published"]);
         $this->full_text = $db_row["full_text"];
     }
 
@@ -38,6 +50,10 @@ class Event
 
     function render_as_card()
     {
+        if (!$this->published)
+        {
+            return;
+        }
         if ($this->repeats)
         {
             $repeats_string = "<li> <span class=\"bold\"> <i class=\"fa fa-fw fa-repeat\"></i> Poi si ripete:&nbsp;</span>" . $this->repeats . "</li>";

@@ -10,6 +10,7 @@ class Database
     function __construct()
     {
         $this->db_handle = new \SQLite3(__DIR__  . '/data.sqlite3');
+        $this->db_handle->exec('PRAGMA journal_mode = wal;');
     }
 
     function event_fetch_one(int $id): ?Event
@@ -86,7 +87,7 @@ class Database
         if ($ev->id == -1 || !isset($ev->id))
         {
             $st = $this->db_handle->prepare(
-                "INSERT INTO events(title, description, event_timestamp, repeats, where_address, where_map_url) VALUES (?, ?, ?, ?, ?, ?)"
+                "INSERT INTO events(title, description, event_timestamp, repeats, where_address, where_map_url, full_text, published) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             );
             $st->bindValue(1, $ev->title, SQLITE3_TEXT);
             $st->bindValue(2, $ev->description, SQLITE3_TEXT);
@@ -94,6 +95,8 @@ class Database
             $st->bindValue(4, $ev->repeats, SQLITE3_TEXT);
             $st->bindValue(5, $ev->where_address, SQLITE3_TEXT);
             $st->bindValue(6, $ev->where_map_url, SQLITE3_TEXT);
+            $st->bindValue(7, $ev->full_text, SQLITE3_TEXT);
+            $st->bindValue(8, $ev->published, SQLITE3_INTEGER);
             $st->execute();
             
             $ev->id = $this->db_handle->lastInsertRowID();
@@ -101,16 +104,20 @@ class Database
         else
         {
             $st = $this->db_handle->prepare(
-                "UPDATE events SET title=?, description=?, event_timestamp=?, repeats=?, where_address=?, where_map_url=? WHERE id=?"
+                "UPDATE events SET title=?, description=?, event_timestamp=?, repeats=?, where_address=?, where_map_url=?, full_text=?, published=? WHERE id=?"
             );
             $st->bindValue(1, $ev->title, SQLITE3_TEXT);
             $st->bindValue(2, $ev->description, SQLITE3_TEXT);
             $st->bindValue(3, $ev->event_timestamp, SQLITE3_INTEGER);
             $st->bindValue(4, $ev->repeats, SQLITE3_TEXT);
             $st->bindValue(5, $ev->where_address, SQLITE3_TEXT);
-            $st->bindValue(6, $ev->where_map_url, SQLITE3_TEXT);
-            $st->bindValue(7, $ev->id, SQLITE3_INTEGER);
-            $st->execute();
+            $st->bindValue(6, $ev->where_map_url);
+            $st->bindValue(7, $ev->full_text, SQLITE3_TEXT);
+            $st->bindValue(8, $ev->published, SQLITE3_INTEGER);
+            $st->bindValue(9, $ev->id, SQLITE3_INTEGER);
+            $res = $st->execute();
+            var_dump($st);
+            var_dump($res);
         }
     }
 
@@ -122,6 +129,11 @@ class Database
     }
 
     function __destruct()
+    {
+        $this->db_handle->close();
+    }
+
+    function __manual_free()
     {
         $this->db_handle->close();
     }

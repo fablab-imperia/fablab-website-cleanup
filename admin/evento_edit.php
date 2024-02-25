@@ -10,16 +10,6 @@ if (!isset($cur_event))
 }
 ?>
 
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
-{
-    $obj = $_POST;
-    $obj["event_timestamp"] = strtotime($obj["date"] . " " . $obj["time"]);
-    $e = new Event($obj);
-    $db->event_save($e);
-}
-?>
 
 <?php require "../private/header.php"; ?>
 
@@ -28,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
 <?php require "./_admin_back_button.php"; ?>
 
-<h1>Aggiungi evento</h1> 
+<h1>Modifica evento</h1> 
 
 
-<form method="post" action="/admin/evento_edit.php?id=<?php echo $cur_event->id; ?>">
+<form method="post" action="/admin/evento_edit_do.php" autocomplete="off">
     <input type="hidden" name="id" value="<?php echo $cur_event->id; ?>">    
     <div>
         <label for="title">Titolo</label>
@@ -50,6 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     </div>
 
     <div>
+        <label for="repeats">Si ripete ogni:</label>
+        <input type="text" name="repeats" id="repeats" value="<?php echo $cur_event->repeats; ?>">
+    </div>
+
+    <div>
         <label for="where_address">Luogo</label>
         <input required type="text" name="where_address" id="where_address" value="<?php echo $cur_event->where_address; ?>">
     </div>
@@ -60,6 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     </div>
 
     <div>
+        <label for="published">Hai avvisato Donatella?</label>
+        <input type="checkbox" name="published" id="published" <?php if ($cur_event->published){echo "checked";} ?>>
+    </div>
+
+    <div>
         <label for="full_text">Programma dell'evento</label>
         <textarea rows=10 cols=50 name="full_text" id="full_text"><?php echo $cur_event->full_text; ?></textarea>
     </div>
@@ -67,8 +67,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     <div>
         <button class="btn btn-primary" type="submit">Salva</button>
     </div>
-
 </form>
+
+<div style="margin-top:5rem;">
+    <a class="btn" href="/admin/evento_delete.php?id=<?php echo $cur_event->id; ?>">
+    Elimina <i href="" class="fa fa-remove"></i>
+    </a>
+</div>
 
 </div>
 </main>

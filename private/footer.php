@@ -4,7 +4,12 @@
             <div class="col-lg-4">
                 <img class="logo" src="/assets/logo-fablab.png" alt="">
                 <h2>
-                 <a href="/">Fablab Imperia APS</a>
+                    <a href="/">Fablab Imperia APS</a>
+                    <div style="width:100%; display:flex; justify-content:space-around; width: 8em;">
+                        <a href="https://github.com/fablab-imperia"><i class="fa fa-2x fa-github"></i></a>
+                        <a href="https://www.youtube.com/@fablabimperia4165/videos"><i class="fa fa-2x fa-youtube"></i></a>
+                        <!-- <a href=""><i class="fa fa-2x fa-rss"></i></a>  -->
+                    </div>
                 </h2>
 
                 <!-- link vari git youtube -->
@@ -21,8 +26,9 @@
                 <p>
                 <i class="fa fa-lg fa-address-book"></i> PEC:&nbsp;<a href="mailto:fablabimperia@pec.it">fablabimperia@pec.it</a>
                 </p>
+                <hr>
                 <p>
-                    <i class="fa fa-github fa-lg"></i> Github:&nbsp;<a href="https://github.com/fablab-imperia">fablab-imperia</a>
+                    <i class="fa fa-lock fa-lg"></i><a href="/admin/">Area riservata</a>
                 </p>
             </div>
             <div class="col-lg-8">
