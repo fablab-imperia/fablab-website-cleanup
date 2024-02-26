@@ -2,7 +2,7 @@
 <div class="container">
 		<div class="row">
             <div class="col-lg-4">
-                <img class="logo" src="/assets/logo-fablab.png" alt="">
+                <img class="logo" src="/assets/images/200_logo-fablab.webp" alt="">
                 <h2>
                     <a href="/">Fablab Imperia APS</a>
                     <div style="width:100%; display:flex; justify-content:space-around; width: 8em;">
