@@ -7,6 +7,7 @@
 	<script defer src="/assets/scroll_into_main.js"></script>
 	<script defer src="/assets/load_google_maps.js"></script>
 	<link rel="sitemap" href="sitemap.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Eventi Fablab Imperia" href="/rss.xml" />
 	<link rel="stylesheet" href="/assets/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="/assets/font_load.css">
 	<link rel="stylesheet" href="/assets/fabstyle.min.css">

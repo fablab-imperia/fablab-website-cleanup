@@ -15,37 +15,15 @@ $event = $db->event_fetch_one($_GET["id"]);
 </h1>
 
 <header>
-	<ul>
-		<li>
-			<span class="bold">
-			🗓️ Quando:
-			</span>
-			<?php echo date(
-				"j/n/Y H:i",
-				$event->event_timestamp
-			); ?>
-		</li>
-		<li>
-			<span class="bold">
-			🔄 Poi si ripete:
-			</span>
-			<?php echo $event->repeats; ?>
-		</li>
-		<li>
-			<span class="bold">
-				📍 Dove:
-			</span>
-			<?php echo $event->where_address; ?>
-		</li>
-	</ul>
+	<?php echo $event->render_metadata(); ?>
 </header>
 
 <article>
 	<?php $p = new Parsedown(); echo $p->text($event->full_text); ?>
 </article>
 
-</main>
 </div>
+</main>
 <?php
 require "../private/footer.php";
 ?>

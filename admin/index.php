@@ -1,5 +1,5 @@
 <?php
-require_once "../private/header.php";
+require_once __DIR__ . "/../private/header.php";
 ?>
 
 

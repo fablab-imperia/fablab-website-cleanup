@@ -1,6 +1,6 @@
 <?php
-require "../private/event_management.php";
-require "../private/database.php";
+require __DIR__ . "/../private/event_management.php";
+require __DIR__ . "/../private/database.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $e = new Event($obj);
     $db = new Database();
     $db->event_save($e);
+    require __DIR__ . "/../private/feed_generation.php";
     header('Location: /admin/evento_edit.php?id=' . $e->id);
 }
 ?>

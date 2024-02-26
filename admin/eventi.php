@@ -1,6 +1,6 @@
 <?php
-require "../private/header.php";
-require "../private/database.php";
+require __DIR__ . "/../private/header.php";
+require __DIR__ . "/../private/database.php";
 ?>
 <main>
 <div class="container">

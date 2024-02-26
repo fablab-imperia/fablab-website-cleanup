@@ -1,6 +1,6 @@
 <?php
-require "../private/event_management.php";
-require "../private/database.php";
+require __DIR__ . "/../private/event_management.php";
+require __DIR__ . "/../private/database.php";
 
 $db = new Database();
 $cur_event = $db->event_fetch_one(intval($_GET["id"]));
@@ -25,12 +25,12 @@ if (!isset($cur_event))
     <input type="hidden" name="id" value="<?php echo $cur_event->id; ?>">    
     <div>
         <label for="title">Titolo</label>
-        <input required type="text" name="title" id="title" value="<?php echo $cur_event->title; ?>" >
+        <input required maxlength="50" type="text" name="title" id="title" value="<?php echo $cur_event->title; ?>" >
     </div>
 
     <div>
         <label for="description">Descrizione</label>
-        <input required type="text" name="description" id="description" value="<?php echo $cur_event->description; ?>">
+        <input required maxlength="150" type="text" name="description" id="description" value="<?php echo $cur_event->description; ?>">
     </div>
 
     <div>
@@ -55,7 +55,7 @@ if (!isset($cur_event))
     </div>
 
     <div>
-        <label for="published">Hai avvisato Donatella?</label>
+        <label for="published">Hai prenotato la sala avvisando Donatella?</label>
         <input type="checkbox" name="published" id="published" <?php if ($cur_event->published){echo "checked";} ?>>
     </div>
 

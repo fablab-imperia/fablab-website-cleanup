@@ -1,4 +1,7 @@
 <?php
+/*
+GENERA il feed RSS e la Sitemap, salvandoli nel file "sitemap.xml" e "rss.xml"
+*/
 require_once __DIR__  . "/database.php";
 
 const BASE_URL ="https://www.fablabimperia.org";
@@ -6,7 +9,6 @@ const BASE_URL ="https://www.fablabimperia.org";
 function feed_generation()
 {
 	$db = new Database();
-
 
 	$events = array_merge(
 		array_reverse(

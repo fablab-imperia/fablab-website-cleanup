@@ -72,6 +72,10 @@ a {
     color: var(--gray-text);
     line-height: 1.75rem;
 }
+li > i
+{
+    color: var(--text-light);
+}
 
 /* Colora icone ForkAwesome */
 i {
@@ -79,7 +83,7 @@ i {
 }
 
 li i {
-    color: var(--primary-color);
+    color: var(--text-light);
 }
 .card li i 
 {

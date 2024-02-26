@@ -1,6 +1,6 @@
 <?php
-require "../private/event_management.php";
-require "../private/database.php";
+require __DIR__ . "/../private/event_management.php";
+require __DIR__ . "/../private/database.php";
 ?>
 
 <?php
@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     var_dump($e);
     $db = new Database();
     $db->event_save($e);
+    require __DIR__ . "/../private/feed_generation.php";
     header('Location: /admin/eventi.php');
 }
 ?>
@@ -32,12 +33,12 @@ require "../private/header.php";
     <input type="hidden" name="id" value="-1">    
     <div>
         <label for="title">Titolo</label>
-        <input required type="text" name="title" id="title">
+        <input required type="text" name="title" id="title" maxlength="50">
     </div>
 
     <div>
         <label for="description">Descrizione</label>
-        <input required type="text" name="description" id="description">
+        <input required type="text" name="description" id="description"  maxlength="150">
     </div>
 
     <div>
@@ -62,7 +63,7 @@ require "../private/header.php";
     </div>
 
     <div>
-        <label for="published">Hai avvisato Donatella?</label>
+        <label for="published">Hai prenotato la sala avvisando Donatella?</label>
         <input type="checkbox" name="published" id="published" <?php if ($cur_event->published){echo "checked";} ?>>
     </div>
 

@@ -1,6 +1,6 @@
 <?php
-require "../private/event_management.php";
-require "../private/database.php";
+require __DIR__ . "/../private/event_management.php";
+require __DIR__ . "/../private/database.php";
 ?>
 
 <?php
@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     if (isset($_POST["elimina"]))
     {
         $db->event_delete($_GET["id"]);
+        require __DIR__ . "/../private/feed_generation.php";
         header('Location: /admin/eventi.php');
         die;
     }
