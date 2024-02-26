@@ -9,7 +9,7 @@
     <link rel="sitemap" href="sitemap.xml" />
     <link rel="stylesheet" href="/assets/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/assets/font_load.css">
-    <link rel="stylesheet" href="/assets/fabstyle.css">
+    <link rel="stylesheet" href="/assets/fabstyle.min.css">
     <link rel="stylesheet" href="/assets/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
 </head>
