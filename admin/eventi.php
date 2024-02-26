@@ -18,11 +18,13 @@ echo "<ul>";
 foreach ($events as $value)
 {
     echo "<li>";
-    echo "<a href=\"/admin/evento_edit.php?id=" . $value->id . "\"><i class=\"fa fa-edit\"></i></a>";
+    echo "<a href=\"/admin/evento_edit.php?id=" . $value->id . "\">";
+    echo "<i class=\"fa fa-edit\"></i>";
     echo "&nbsp;";
     echo date("d/m/Y, H:i", $value->event_timestamp);
     echo "&nbsp;";
     echo $value->title;
+    echo "</a>";
     echo "</li>";
 }
 echo "</ul>"
