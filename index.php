@@ -51,7 +51,7 @@ require "private/header.php";
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <img class="rounded wide" src="/assets/images/compressed/500_ruote_modello_3d.png" alt="">
+                        <img class="rounded wide" src="/assets/images/compressed/500_ruote_modello_3d.jpg" alt="">
                     </div>
                 </div>
 
