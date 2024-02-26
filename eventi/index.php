@@ -5,19 +5,19 @@ require '../private/database.php';
 <main>
 <div class="container">
 <h1>
-    Prossimi eventi
+	Prossimi eventi
 </h1>
 
 <?php
 $db = new Database();
 $events = $db->event_fetch_future();
 foreach ($events as $value) {
-    $value->render_as_card();
+	$value->render_as_card();
 }
 if (count($events) == 0) {
-    echo '<p>';
-    echo 'Nessun evento organizzato nei prossimi giorni. </p><p>Vuoi passare a trovarci o hai un\'idea da proporci? <br> Contattaci a <a href="mailto:info@fablabimperia.org" >info@fablabimperia.org</a> per informazioni sugli orari di apertura.<br> Ti aspettiamo!';
-    echo '</p>';
+	echo '<p>';
+	echo 'Nessun evento organizzato nei prossimi giorni. </p><p>Vuoi passare a trovarci o hai un\'idea da proporci? <br> Contattaci a <a href="mailto:info@fablabimperia.org" >info@fablabimperia.org</a> per informazioni sugli orari di apertura.<br> Ti aspettiamo!';
+	echo '</p>';
 }
 ?>
 
@@ -27,7 +27,7 @@ if (count($events) == 0) {
 <?php
 $events = $db->event_fetch_past();
 foreach ($events as $value) {
-    $value->render_as_card();
+	$value->render_as_card();
 }
 ?>
 </div>

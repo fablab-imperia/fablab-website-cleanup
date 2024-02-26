@@ -3,3 +3,5 @@ private/data.sqlite3
 .htpasswd
 media
 assets/images/compressed
+rss.xml
+sitemap.xml

@@ -11,37 +11,37 @@ $event = $db->event_fetch_one($_GET["id"]);
 <div class="container">
 
 <h1>
-    <?php echo $event->title;?>
+	<?php echo $event->title;?>
 </h1>
 
 <header>
-    <ul>
-        <li>
-            <span class="bold">
-            🗓️ Quando:
-            </span>
-            <?php echo date(
-                "j/n/Y H:i",
-                $event->event_timestamp
-            ); ?>
-        </li>
-        <li>
-            <span class="bold">
-            🔄 Poi si ripete:
-            </span>
-            <?php echo $event->repeats; ?>
-        </li>
-        <li>
-            <span class="bold">
-                📍 Dove:
-            </span>
-            <?php echo $event->where_address; ?>
-        </li>
-    </ul>
+	<ul>
+		<li>
+			<span class="bold">
+			🗓️ Quando:
+			</span>
+			<?php echo date(
+				"j/n/Y H:i",
+				$event->event_timestamp
+			); ?>
+		</li>
+		<li>
+			<span class="bold">
+			🔄 Poi si ripete:
+			</span>
+			<?php echo $event->repeats; ?>
+		</li>
+		<li>
+			<span class="bold">
+				📍 Dove:
+			</span>
+			<?php echo $event->where_address; ?>
+		</li>
+	</ul>
 </header>
 
 <article>
-    <?php $p = new Parsedown(); echo $p->text($event->full_text); ?>
+	<?php $p = new Parsedown(); echo $p->text($event->full_text); ?>
 </article>
 
 </main>
