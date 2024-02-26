@@ -5,12 +5,12 @@
 				<img class="logo" src="/assets/images/200_logo-fablab.webp" alt="">
 				<h2>
 					<a href="/">Fablab Imperia APS</a>
-					<div style="width:100%; display:flex; justify-content:space-around; width: 8em;">
-						<a href="https://github.com/fablab-imperia"><i class="fa fa-2x fa-github"></i></a>
-						<a href="https://www.youtube.com/@fablabimperia4165/videos"><i class="fa fa-2x fa-youtube"></i></a>
-						<a href="/rss.xml"><i class="fa fa-2x fa-rss"></i></a> 
-					</div>
 				</h2>
+				<div style="display:flex; justify-content:space-around; width: 15em;">
+					<a href="https://github.com/fablab-imperia"><i class="fa fa-2x fa-github"></i></a>
+					<a href="https://www.youtube.com/@fablabimperia4165/videos"><i class="fa fa-2x fa-youtube"></i></a>
+					<a href="/rss.xml"><i class="fa fa-2x fa-rss"></i></a> 
+				</div>
 				<!-- link vari git youtube -->
 
 				<p> <i class="fa fa-lg fa-map-marker"></i> ARCI Il Campo delle Fragole - Viale Matteotti, 31 - 18100 Imperia (IM)</p>
@@ -60,7 +60,9 @@
 		<hr>
 		<p class="imprint">
 		Associazione&nbsp;Fablab&nbsp;Imperia&nbsp;APS · C.F.:&nbsp;91043710085 · P.IVA:&nbsp;01665670087 · info@fablabimperia.org · pec:&nbsp;fablabimperia@pec.it
-		</p>
+		<br>
+
+	</p>
 </div>
 
 </footer>
