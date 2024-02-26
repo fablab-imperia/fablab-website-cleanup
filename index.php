@@ -124,7 +124,7 @@ require "private/header.php";
 
 
     <section style="text-align:center;">
-    <h1>Incuriosito?</h1>
+    <h2>Incuriosito?</h2>
     <!-- <p>
         Contattaci per visitare il laboratorio o partecipa a uno dei prossimi eventi
     </p> -->
