@@ -2,3 +2,4 @@ private/data.sqlite3
 .htaccess
 .htpasswd
 media
+assets/images/compressed

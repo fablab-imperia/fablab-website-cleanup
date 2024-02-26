@@ -95,7 +95,7 @@ li i {
 }
 
 .fake-map {
-    background-image: url('/assets/images/fake_map_low.jpg');
+    background-image: url('/assets/images/compressed/200_fake_map.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -285,11 +285,25 @@ pagina */
     background-position: center;
     width: 100%;
     height: auto;
-    background-image: url("/assets/images/hero-alto.opti.webp");
+    background-image: url("/assets/images/compressed/full_hero_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
+@media(max-width: 768)
+{
+    .hero-container
+    {
+        background-image: url("/assets/images/compressed/500_hero_background.jpg");
+    }
+}@media(max-width: 500)
+{
+    .hero-container
+    {
+        background-image: url("/assets/images/compressed/200_hero_background.jpg");
+    }
+}
+
 
 @media(max-width:768px) {
     .hero-container {

@@ -2,7 +2,7 @@
 require "private/header.php";
 ?>
 
-<div style='background-image:url("/assets/images/hero-alto.opti.webp")' class="hero-container">
+<div class="hero-container">
     <div class="container">
         <div class="hero">
             <small class="text-highlight">
@@ -40,7 +40,7 @@ require "private/header.php";
 
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="rounded wide" src="/assets/images/IMG_5350 cropped-min.jpg" alt="">
+                        <img class="rounded wide" src="/assets/images/stampa_3d.jpg" alt="">
                         <h3>Creatività 2.0</h3>
                         <ul class="fa-ul">
                             <li> <i class="fa fa-li fa-check"></i>Stampa3D</li>
@@ -51,13 +51,13 @@ require "private/header.php";
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <img class="rounded wide" src="/assets/images/ruoterover cropped-min.opti.png" alt="">
+                        <img class="rounded wide" src="/assets/images/compressed/500_ruote_modello_3d.png" alt="">
                     </div>
                 </div>
 
             </div>
             <div class="col-md-6 order-xs-1">
-                <img src="/assets/images/IMG_2557-min.jpg" alt="" class="rounded wide">
+                <img src="/assets/images/compressed/500_matrice_di_led.jpg" alt="" class="rounded wide">
             </div>
         </div>
     </section>
@@ -78,7 +78,7 @@ require "private/header.php";
                 </p>
             </div>
             <div class="col-md-6 order-md-1">
-                <img src="/assets/images/IMG_8103 figma-min.opti.webp" alt="" class="img-fluid rounded wide">
+                <img src="/assets/images/compressed/500_saldatura.jpg" alt="" class="img-fluid rounded wide">
             </div>
         </div>
     </section>
