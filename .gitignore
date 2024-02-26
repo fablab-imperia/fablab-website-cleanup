@@ -3,3 +3,4 @@ private/data.sqlite3
 .htpasswd
 media
 assets/images/compressed
+assets/fabstyle.min.css

@@ -13,3 +13,5 @@ do
 	convert assets/images/${file} -strip -interlace Plane -quality 80 -resize 1000x1000 assets/images/compressed/1000_${file_no_extension}.jpg
 	convert assets/images/${file} -strip -interlace Plane -quality 80 assets/images/compressed/full_${file_no_extension}.jpg
 done
+
+yui-compressor assets/fabstyle.css > assets/fabstyle.min.css
