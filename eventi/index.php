@@ -1,4 +1,5 @@
 <?php
+$TITLE = "Scopri i prossimi eventi";
 require '../private/header.php';
 require '../private/database.php';
 ?>

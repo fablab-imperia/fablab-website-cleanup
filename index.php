@@ -1,4 +1,5 @@
 <?php
+$TITLE = "Homepage Fablab Imperia - Laboratorio";
 require "private/header.php";
 ?>
 

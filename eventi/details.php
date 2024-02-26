@@ -1,11 +1,12 @@
 <?php
-require "../private/header.php";
 require "../private/database.php";
-
 require_once "../private/Parsedown.php";
 
 $db = new Database();
 $event = $db->event_fetch_one($_GET["id"]);
+
+$TITLE = "Programma dell'evento \"" . $event->title . "\"";
+require "../private/header.php";
 ?>
 <main>
 <div class="container">

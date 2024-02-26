@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?php echo $TITLE; ?></title>
 	<script defer src="/assets/scroll_into_main.js"></script>
 	<script defer src="/assets/load_google_maps.js"></script>
 	<link rel="sitemap" href="sitemap.xml" />
