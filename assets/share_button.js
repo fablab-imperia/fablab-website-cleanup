@@ -5,7 +5,8 @@ if (navigator.share!==undefined)
     .addEventListener("click", ()=>{
         navigator.share(
             {
-                "url":window.location.href
+                "url":window.location.href,
+                "text":"Partecipa all'evento di Fablab Imperia"
             }
         )
     });
