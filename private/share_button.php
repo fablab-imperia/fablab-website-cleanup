@@ -2,24 +2,7 @@
     <i class="fa fa-share-alt fa-lg"></i>
 </button>
 
-<script>
-"use strict";
-if (navigator.share!==undefined)
-{
-    document.getElementById("share-button")
-    .addEventListener("click", ()=>{
-        navigator.share(
-            {
-                "url":window.location.href
-            }
-        )
-    });
-}
-else
-{
-    document.getElementById("share-button").style.display="none";
-}
-</script>
+<script src="/assets/share_button.js"></script>
 
 <style>
 @media(max-width:768px)
