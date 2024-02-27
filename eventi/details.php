@@ -1,6 +1,6 @@
 <?php
-require "../private/database.php";
-require_once "../private/Parsedown.php";
+require __DIR__  . "/../private/database.php";
+require_once __DIR__  . "/../private/Parsedown.php";
 
 $db = new Database();
 $event = $db->event_fetch_one($_GET["id"]);
@@ -19,6 +19,8 @@ require "../private/header.php";
 	<?php echo $event->render_metadata(); ?>
 </header>
 
+<?php require_once __DIR__ . "/../private/share_button.php"; ?>
+
 <article>
 	<?php $p = new Parsedown(); echo $p->text($event->full_text); ?>
 </article>
@@ -26,5 +28,5 @@ require "../private/header.php";
 </div>
 </main>
 <?php
-require "../private/footer.php";
+require __DIR__  . "/../private/footer.php";
 ?>

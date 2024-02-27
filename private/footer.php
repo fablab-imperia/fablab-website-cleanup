@@ -61,7 +61,6 @@
 		<p class="imprint">
 		Associazione&nbsp;Fablab&nbsp;Imperia&nbsp;APS · C.F.:&nbsp;91043710085 · P.IVA:&nbsp;01665670087 · info@fablabimperia.org · pec:&nbsp;fablabimperia@pec.it
 		<br>
-
 	</p>
 </div>
 

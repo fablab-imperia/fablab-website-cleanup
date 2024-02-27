@@ -7,6 +7,7 @@
 	<title><?php echo $TITLE; ?></title>
 	<script defer src="/assets/scroll_into_main.js"></script>
 	<script defer src="/assets/load_google_maps.js"></script>
+	<script src="/assets/close_navbar_on_load.js"></script>
 	<link rel="sitemap" href="sitemap.xml">
 	<link rel="alternate" type="application/rss+xml" title="Eventi Fablab Imperia" href="/rss.xml">
 	<link rel="stylesheet" href="/assets/bootstrap-grid.min.css">
