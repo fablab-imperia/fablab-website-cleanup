@@ -18,6 +18,7 @@
 
 #share-button
 {
+    display:none;
     background-color:var(--card-border-color);
 }
 #share-button:hover

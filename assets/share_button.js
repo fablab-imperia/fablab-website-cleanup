@@ -1,8 +1,9 @@
 "use strict";
 if (navigator.share!==undefined)
 {
-    document.getElementById("share-button")
-    .addEventListener("click", ()=>{
+    let btn = document.getElementById("share-button");
+
+    btn.addEventListener("click", ()=>{
         navigator.share(
             {
                 "url":window.location.href,
@@ -10,8 +11,5 @@ if (navigator.share!==undefined)
             }
         )
     });
-}
-else
-{
-    document.getElementById("share-button").style.display="none";
+    btn.style.display = "block";
 }
