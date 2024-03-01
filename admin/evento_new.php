@@ -78,6 +78,11 @@ require "../private/header.php";
 
 </form>
 
+<!-- Load simplemde -->
+<script src="/assets/simplemde/dist/simplemde.min.js"></script>
+<link rel="stylesheet" href="/assets/simplemde/dist/simplemde.min.css">
+<script src="/assets/load_simplemde.js"></script>
+
 </div>
 </main>
 <?php

@@ -362,3 +362,9 @@ pagina */
 {
     margin: 8px;
 }
+
+/* Simplemde */
+.editor-toolbar
+{
+    background-color: white;
+}
