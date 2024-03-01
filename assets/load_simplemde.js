@@ -3,6 +3,7 @@ var simplemde = new SimpleMDE(
         blockStyles:{
             italic:"_"
         },
-        forceSync:true
+        forceSync:true,
+        spellChecker: false
     }
 );

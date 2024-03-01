@@ -4,7 +4,13 @@ Riscrittura ultra ottimizzata e all'osso creata in puro CSS e PHP del sito Fabla
 
 - pagina amministrazione
 - db sqlite
-- 
+
+
+Dopo aver clonato il repository, eseguire
+```bash
+git submodule init
+git submodule update
+```
 
 ## Organizzazione
 
