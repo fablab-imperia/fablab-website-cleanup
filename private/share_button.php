@@ -20,6 +20,7 @@
 {
     display:none;
     background-color:var(--card-border-color);
+    box-shadow: 0 0 5px var(--text);
 }
 #share-button:hover
 {

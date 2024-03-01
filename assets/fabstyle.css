@@ -251,6 +251,7 @@ main {
     padding-right:4rem;*/
     padding-top: 5rem;
     padding-bottom: 6rem;
+    min-height: 80vh;
 }
 
 section {
