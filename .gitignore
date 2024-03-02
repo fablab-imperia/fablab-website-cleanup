@@ -1,7 +1,8 @@
 private/data.sqlite3
 .htaccess
 .htpasswd
-media
 assets/images/compressed
 rss.xml
 sitemap.xml
+eventi/media/**
+!eventi/media/.gitkeep
