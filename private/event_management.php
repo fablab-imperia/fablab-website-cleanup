@@ -77,10 +77,10 @@ class Event
 			$lazy_text = $lazy_load_images? " loading=\"lazy\"":"";
 			$grid_picture_html = '
 			<div class="row">
-				<div class="col-8 col-md-6">
+				<div class="col-12 order-md-1 order-12 col-md-6">
 				' . $this->render_metadata() .'
 				</div>
-				<div class="col-4 col-md-6">
+				<div class="col-12 order-md-12 order-1 col-md-6">
 				<img ' . $lazy_text . ' class="img-fluid wide rounded" src="'.$this->gen_image_url_low().'">
 				</div>
 			</div>';
