@@ -49,7 +49,7 @@ require "../private/header.php";
 
     <div>
         <label for="repeats">Si ripete ogni:</label>
-        <input type="text" name="repeats" id="repeats" value="<?php echo $cur_event->repeats; ?>">
+        <input type="text" name="repeats" id="repeats">
     </div>
 
     <div>
@@ -60,11 +60,6 @@ require "../private/header.php";
     <div>
         <label for="where_map_url">Link alla mappa</label>
         <input type="text" name="where_map_url" id="where_map_url">
-    </div>
-
-    <div>
-        <label for="published">Hai prenotato la sala avvisando Donatella?</label>
-        <input type="checkbox" name="published" id="published" <?php if ($cur_event->published){echo "checked";} ?>>
     </div>
 
     <div>

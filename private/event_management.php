@@ -65,11 +65,33 @@ class Event
 	}
 
 
-	function render_as_card()
+	function render_as_card(bool $lazy_load_images=false)
 	{
 		if (!$this->published)
 		{
 			return;
+		}
+
+		if (is_file($this->gen_image_path_low()))
+		{
+			$lazy_text = $lazy_load_images? " loading=\"lazy\"":"";
+			$grid_picture_html = '
+			<div class="row">
+				<div class="col-8 col-md-6">
+				' . $this->render_metadata() .'
+				</div>
+				<div class="col-4 col-md-6">
+				<img ' . $lazy_text . ' class="img-fluid wide rounded" src="'.$this->gen_image_url_low().'">
+				</div>
+			</div>';
+		}
+		else
+		{
+			$grid_picture_html = '<div class="row">
+				<div class="col-12">
+				' . $this->render_metadata() .'
+				</div>
+			</div>';
 		}
 		
 		printf("
@@ -84,7 +106,7 @@ class Event
 		</div>
 		",
 		$this->title,
-		$this->render_metadata(),
+		$grid_picture_html,
 		$this->generate_url()
 		);
 	}
@@ -92,6 +114,23 @@ class Event
 	function generate_url():string
 	{
 		return "/eventi/details.php?id=" . $this->id;
+	}
+
+	function gen_image_path():string
+	{
+		return __DIR__ . "/../eventi/media/" . $this->id .".jpg";
+	}
+	function gen_image_path_low():string
+	{
+		return __DIR__ . "/../eventi/media/" . $this->id ."_low.jpg";
+	}
+	function gen_image_url():string
+	{
+		return "/eventi/media/" . $this->id .".jpg";
+	}
+	function gen_image_url_low():string
+	{
+		return "/eventi/media/" . $this->id ."_low.jpg";
 	}
 }
 

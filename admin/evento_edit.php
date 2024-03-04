@@ -20,6 +20,10 @@ if (!isset($cur_event))
 
 <h1>Modifica evento</h1> 
 
+<p>
+    Carica immagine <a href="/admin/evento_upload_preview_img.php?id=<?php echo $cur_event->id?>" target="_blank" rel="noopener noreferrer"> <i class="fa fa-file-picture-o"></i></a>
+</p>
+
 
 <form method="post" action="/admin/evento_edit_do.php" autocomplete="off">
     <input type="hidden" name="id" value="<?php echo $cur_event->id; ?>">    

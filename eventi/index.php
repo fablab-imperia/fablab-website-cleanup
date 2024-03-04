@@ -10,10 +10,12 @@ require '../private/database.php';
 </h1>
 
 <?php
+$counter_eventi = 0;
 $db = new Database();
 $events = $db->event_fetch_future();
 foreach ($events as $value) {
-	$value->render_as_card();
+	$counter_eventi++;
+	$value->render_as_card($counter_eventi > 3);
 }
 if (count($events) == 0) {
 	echo '<p>';
@@ -27,8 +29,10 @@ if (count($events) == 0) {
 <h1>Eventi passati</h1>
 <?php
 $events = $db->event_fetch_past();
-foreach ($events as $value) {
-	$value->render_as_card();
+foreach ($events as $value)
+{
+	$counter_eventi++;
+	$value->render_as_card($counter_eventi > 3);
 }
 ?>
 </div>
