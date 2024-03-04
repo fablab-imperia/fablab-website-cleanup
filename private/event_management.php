@@ -11,6 +11,7 @@ class Event
 	public string $where_address;
 	public ?string $where_map_url;
 	public bool $published;
+	public bool $open_day;
 
 	public string $full_text;
 
@@ -35,6 +36,7 @@ class Event
 		}
 
 		$this->published = boolval($db_row["published"]);
+		$this->open_day = boolval($db_row["open_day"]);
 		$this->full_text = $db_row["full_text"];
 	}
 
@@ -47,7 +49,19 @@ class Event
 		return $d;
 	}
 
-	function render_metadata()
+	function render_open_day_badge(): string
+	{
+		if ($this->open_day)
+		{
+			return '<span class="bold"> <i class="fa fa-fw fa-user-plus"></i>  Open day</span>';
+		}
+		else
+		{
+			return '<span class="bold"> <i class="fa fa-fw fa-users"></i> Riservato ai soci</span>';;
+		}
+	}
+
+	function render_metadata(): string
 	{
 		if ($this->repeats)
 		{
@@ -57,10 +71,12 @@ class Event
 			<li> <span class=\"bold\"><i class=\"fa fa-fw fa-calendar\"></i> Quando:</span> %s</li>
 			%s
 			<li> <span class=\"bold\"> <i class=\"fa fa-fw fa-map-marker\"></i> Dove:</span> %s</li>
+			<li>%s</li>
 			</ul>",
 			date("j/n/Y, H:i", $this->event_timestamp),
 			$repeats_string,
 			$this->where_address,
+			$this->render_open_day_badge(),
 		);
 	}
 

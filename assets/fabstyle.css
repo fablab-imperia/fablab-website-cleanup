@@ -176,7 +176,7 @@ hr {
     border-radius: var(--radius);
 }
 
-img.rounded {
+.rounded {
     overflow: hidden;
 }
 
@@ -186,13 +186,13 @@ img {
 }
 
 img.square {
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     object-fit: cover;
     object-position: 50% 50%;
 }
 
 img.wide {
-    aspect-ratio: calc(16.0/9.0);
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: 50% 50%;
 }
@@ -368,4 +368,16 @@ pagina */
 .editor-toolbar
 {
     background-color: white;
+}
+
+
+/* FORM */
+form>div
+{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+input[type="text"]
+{
+    width: 100%;
 }

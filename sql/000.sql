@@ -1,4 +1,11 @@
 BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "BLOG" (
+	"id"	INTEGER,
+	"title"	TEXT NOT NULL,
+	"content"	TEXT NOT NULL,
+	"date"	DATE NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
 CREATE TABLE IF NOT EXISTS "EVENTS" (
 	"id"	INTEGER,
 	"title"	TEXT NOT NULL,
@@ -6,14 +13,9 @@ CREATE TABLE IF NOT EXISTS "EVENTS" (
 	"event_timestamp"	BIGINT NOT NULL,
 	"repeats"	TEXT,
 	"where_address"	TEXT NOT NULL,
-	"where_map_url"	TEXT NOT NULL,
-	PRIMARY KEY("id" AUTOINCREMENT)
-);
-CREATE TABLE IF NOT EXISTS "BLOG" (
-	"id"	INTEGER,
-	"title"	TEXT NOT NULL,
-	"content"	TEXT NOT NULL,
-	"date"	DATE NOT NULL,
+	"where_map_url"	TEXT,
+	"published"	INTEGER NOT NULL DEFAULT 0,
+	"full_text"	TEXT NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 COMMIT;

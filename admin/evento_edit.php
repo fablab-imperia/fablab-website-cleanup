@@ -21,8 +21,10 @@ if (!isset($cur_event))
 <h1>Modifica evento</h1> 
 
 <p>
-    Carica immagine <a href="/admin/evento_upload_preview_img.php?id=<?php echo $cur_event->id?>" target="_blank" rel="noopener noreferrer"> <i class="fa fa-file-picture-o"></i></a>
+    Anteprima evento <a class="btn" href="/admin/evento_upload_preview_img.php?id=<?php echo $cur_event->id?>" target="_blank" rel="noopener noreferrer">Carica <i class="fa fa-file-picture-o"></i></a>
 </p>
+
+<hr>
 
 
 <form method="post" action="/admin/evento_edit_do.php" autocomplete="off">
@@ -61,6 +63,11 @@ if (!isset($cur_event))
     <div>
         <label for="published">Hai prenotato la sala avvisando Donatella?</label>
         <input type="checkbox" name="published" id="published" <?php if ($cur_event->published){echo "checked";} ?>>
+    </div>
+
+    <div>
+        <label for="open_day">È un open day aperto a non-soci?</label>
+        <input type="checkbox" name="open_day" id="open_day" <?php if ($cur_event->open_day){echo "checked";} ?>>
     </div>
 
     <div>

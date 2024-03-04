@@ -34,6 +34,13 @@ function feed_generation()
 			$st .= "    <title>" . $e->title . "</title>\n";
 			$st .= "    <link>" . BASE_URL . $e->generate_url() . "</link>\n";
 			$st .= "    <description>" . $e->description . "</description>\n";
+			if (is_file($e->gen_image_path_low()))
+			{
+				$st .= "    <media:content xmlns:media=\"http://search.yahoo.com/mrss/\"\n";
+				$st .= "      url=\"" . BASE_URL . $e->gen_image_url_low() . "\"\n";
+				$st .= "      medium=\"image\" type=\"image/jpeg\"\n";
+				$st .= "    />\n";
+			}
 			$st .= "  </item>\n";
 			return $st;
 		},$events)

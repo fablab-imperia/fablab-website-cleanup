@@ -104,7 +104,7 @@ class Database
 		else
 		{
 			$st = $this->db_handle->prepare(
-				"UPDATE events SET title=?, description=?, event_timestamp=?, repeats=?, where_address=?, where_map_url=?, full_text=?, published=? WHERE id=?"
+				"UPDATE events SET title=?, description=?, event_timestamp=?, repeats=?, where_address=?, where_map_url=?, full_text=?, published=?, open_day=? WHERE id=?"
 			);
 			$st->bindValue(1, $ev->title, SQLITE3_TEXT);
 			$st->bindValue(2, $ev->description, SQLITE3_TEXT);
@@ -114,10 +114,9 @@ class Database
 			$st->bindValue(6, $ev->where_map_url);
 			$st->bindValue(7, $ev->full_text, SQLITE3_TEXT);
 			$st->bindValue(8, $ev->published, SQLITE3_INTEGER);
-			$st->bindValue(9, $ev->id, SQLITE3_INTEGER);
+			$st->bindValue(9, $ev->open_day, SQLITE3_INTEGER);
+			$st->bindValue(10, $ev->id, SQLITE3_INTEGER);
 			$res = $st->execute();
-			var_dump($st);
-			var_dump($res);
 		}
 	}
 
