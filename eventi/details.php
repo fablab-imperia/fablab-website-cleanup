@@ -6,6 +6,8 @@ $db = new Database();
 $event = $db->event_fetch_one($_GET["id"]);
 
 $TITLE = "Programma dell'evento \"" . $event->title . "\"";
+$DESCRIPTION = $event->description;
+
 require "../private/header.php";
 ?>
 <main>

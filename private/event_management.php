@@ -112,8 +112,9 @@ class Event
 		
 		printf("
 		<div class=\"card card-opaque\">
-			<h1>%s</h1>
 			<header>
+			<h1>%s</h1>
+			<p>%s</p>
 				%s
 			</header>
 			<a href=\"%s\" class=\"btn btn-primary\">
@@ -121,7 +122,8 @@ class Event
 			</a>
 		</div>
 		",
-		$this->title,
+		htmlentities($this->title),
+		htmlentities($this->description),
 		$grid_picture_html,
 		$this->generate_url()
 		);

@@ -13,11 +13,15 @@ require '../private/database.php';
 $counter_eventi = 0;
 $db = new Database();
 $events = $db->event_fetch_future();
-foreach ($events as $value) {
-	$counter_eventi++;
-	$value->render_as_card($counter_eventi > 3);
+foreach ($events as $value)
+{
+	if ($value->published)
+	{
+		$counter_eventi++;
+		$value->render_as_card($counter_eventi > 3);
+	}
 }
-if (count($events) == 0) {
+if ($counter_eventi == 0) {
 	echo '<p>';
 	echo 'Nessun evento organizzato nei prossimi giorni. </p><p>Vuoi passare a trovarci o hai un\'idea da proporci? <br> Contattaci a <a href="mailto:info@fablabimperia.org" >info@fablabimperia.org</a> per informazioni sugli orari di apertura.<br> Ti aspettiamo!';
 	echo '</p>';
@@ -25,7 +29,7 @@ if (count($events) == 0) {
 ?>
 
 <hr>
-<div style="opacity:30%">
+<div style="opacity:80%">
 <h1>Eventi passati</h1>
 <?php
 $events = $db->event_fetch_past();
