@@ -31,9 +31,9 @@ function feed_generation()
 		"",
 		array_map(function ($e){
 			$st = "  <item>\n";
-			$st .= "    <title>" . $e->title . "</title>\n";
+			$st .= "    <title>" . htmlspecialchars($e->title) . "</title>\n";
 			$st .= "    <link>" . BASE_URL . $e->generate_url() . "</link>\n";
-			$st .= "    <description>" . $e->description . "</description>\n";
+			$st .= "    <description>" . htmlspecialchars($e->description) . "</description>\n";
 			if (is_file($e->gen_image_path_low()))
 			{
 				$st .= "    <media:content xmlns:media=\"http://search.yahoo.com/mrss/\"\n";
