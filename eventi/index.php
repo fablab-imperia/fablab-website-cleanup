@@ -35,8 +35,11 @@ if ($counter_eventi == 0) {
 $events = $db->event_fetch_past();
 foreach ($events as $value)
 {
-	$counter_eventi++;
-	$value->render_as_card($counter_eventi > 3);
+	if ($value->published)
+	{
+		$counter_eventi++;
+		$value->render_as_card($counter_eventi > 3);
+	}
 }
 ?>
 </div>

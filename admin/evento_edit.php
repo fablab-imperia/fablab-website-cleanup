@@ -31,12 +31,12 @@ if (!isset($cur_event))
     <input type="hidden" name="id" value="<?php echo $cur_event->id; ?>">    
     <div>
         <label for="title">Titolo</label>
-        <input required maxlength="50" type="text" name="title" id="title" value="<?php echo $cur_event->title; ?>" >
+        <input required maxlength="50" type="text" name="title" id="title" value="<?php echo htmlentities($cur_event->title); ?>" >
     </div>
 
     <div>
         <label for="description">Descrizione</label>
-        <input required maxlength="150" type="text" name="description" id="description" value="<?php echo $cur_event->description; ?>">
+        <input required maxlength="150" type="text" name="description" id="description" value="<?php echo htmlentities($cur_event->description); ?>">
     </div>
 
     <div>
@@ -52,12 +52,12 @@ if (!isset($cur_event))
 
     <div>
         <label for="where_address">Luogo</label>
-        <input required type="text" name="where_address" id="where_address" value="<?php echo $cur_event->where_address; ?>">
+        <input required type="text" name="where_address" id="where_address" value="<?php echo htmlentities($cur_event->where_address); ?>">
     </div>
 
     <div>
         <label for="where_map_url">Link alla mappa</label>
-        <input type="text" name="where_map_url" id="where_map_url" value="<?php echo $cur_event->where_map_url; ?>">
+        <input type="text" name="where_map_url" id="where_map_url" value="<?php echo htmlentities($cur_event->where_map_url); ?>">
     </div>
 
     <div>
@@ -72,7 +72,7 @@ if (!isset($cur_event))
 
     <div>
         <label for="full_text">Programma dell'evento</label>
-        <textarea rows=10 cols=50 name="full_text" id="full_text"><?php echo $cur_event->full_text; ?></textarea>
+        <textarea rows=10 cols=50 name="full_text" id="full_text"><?php echo htmlentities($cur_event->full_text); ?></textarea>
     </div>
 
     <div>

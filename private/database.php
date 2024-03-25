@@ -1,7 +1,7 @@
 <?php
 
 require_once "event_management.php";
-
+require_once "blog_management.php";
 
 class Database
 {
@@ -126,6 +126,46 @@ class Database
 		$st->bindValue(1, $id, SQLITE3_INTEGER);
 		$res = $st->execute();
 	}
+
+
+	// ---------------
+	// Gestione BLOG
+	function blog_fetch_all()
+	{
+		$st = $this->db_handle->prepare("SELECT * FROM BLOG ORDER BY creation_timestamp DESC;");
+		$res = $st->execute();
+		
+		$resulting_array = [];
+		while($result = $res->fetchArray(SQLITE3_ASSOC))
+		{
+			$ev = new Blog($result);
+			array_push(
+				$resulting_array,
+				$ev
+			);
+		}
+		return $resulting_array;
+	}
+
+	function blog_fetch_one(int $id)
+	{
+		$st = $this->db_handle->prepare("SELECT * FROM BLOG WHERE id=? LIMIT 1;");
+		$st->bindValue(1, $id, SQLITE3_INTEGER);
+
+		$res = $st->execute()->fetchArray(SQLITE3_ASSOC);
+		if ($res)
+		{
+			return new Blog(
+				$res
+			);
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+
 
 	function __destruct()
 	{

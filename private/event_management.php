@@ -83,11 +83,6 @@ class Event
 
 	function render_as_card(bool $lazy_load_images=false)
 	{
-		if (!$this->published)
-		{
-			return;
-		}
-
 		if (is_file($this->gen_image_path_low()))
 		{
 			$lazy_text = $lazy_load_images? " loading=\"lazy\"":"";
