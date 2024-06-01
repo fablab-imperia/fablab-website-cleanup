@@ -32,6 +32,12 @@
 				<p>
 					<i class="fa fa-file fa-lg"></i>&nbsp;<a target="_blank" rel="noopener noreferrer" href="/assets/20181110_domanda_di_adesione.pdf">Scarica domanda di adesione</a>
 				</p>
+				<hr>
+				<p>
+					<a href="https://www.gnu.org/philosophy/javascript-trap.html"><img style="height:2em; width:auto;" src="/assets/LibreJS.png" alt="LibreJS logo"></a>
+					<a href="/javascript.php" rel="jslicense">JavaScript license information</a>
+				</p>
+		
 			</div>
 			<div class="col-lg-8">
 				<div id="maps_placeholder" style="width:100%; height:100%;">
@@ -39,8 +45,8 @@
 					<div class="fake-map">
 						<div class="card card-opaque" style="margin:10%;">
 						<p>
-						Google Maps è disattivato per rendere la navigazione scattante e 
-						proteggere meglio la tua privacy.
+						Google Maps è normalmente disattivato per rendere la navigazione scattante e 
+						proteggere al meglio la tua privacy.
 						</p>
 						<form style="" id="map_load_action">
 						<h2>Carica mappa</h2>

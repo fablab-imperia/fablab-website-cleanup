@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   xml:lang="en"
+   id="svg14"
+   sodipodi:docname="LibreJS_icon.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="12.921875"
+     inkscape:cx="29.678356"
+     inkscape:cy="32.038694"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <title
+     id="title2">LibreJS logo</title>
+  <g
+     id="device">
+    <title
+       id="title4">Device</title>
+    <path
+       id="flame"
+       d="   M 15.717 8.953   c 0 0 0.272 3.065 0.409 6.947   c 0.072 2.045 -0.579 4.45 -1.567 4.927   c -0.922 0.445 -5.456 3.195 -8.536 6.811   C 4.078 29.92 3.149 35.333 4.57 39.035   c 0.729 1.9 3.77 2.978 5.346 2.978   c 4.715 0 9.384 -3.979 9.131 -11.405   c -1.013 2.954 -2.07 4 -2.887 3.546   c -0.204 -1.226 -0.359 -2.936 -2.1 -4.563   c 0.182 -1.635 4.518 -3.11 4.518 -9.059   S 15.717 8.953 15.717 8.953   Z  "
+       fill="#a00"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       id="logs"
+       d="   M 2.147 46.055   c 1.197 -0.755 5.363 -1.163 8.318 -1.163   c 3.496 0 6.817 0.869 8.057 1.358   c 0.717 0.283 0.734 1.953 0.098 2.675   c -0.589 0.669 -1.88 -0.946 -8.236 -0.946   c -3.694 0 -6.007 0.6 -6.653 0.92   C 2.157 49.678 0.906 46.838 2.147 46.055   Z   M 0.181 52.332   c 0.867 1.883 2.959 2.751 4.538 2.413   c 0 0 2.671 -1.522 5.285 -1.522   s 3.295 0.464 6.28 1.069   c 2.269 0.46 3.573 -2.016 2.912 -3.022   c -1.867 -1.436 -4.682 -1.731 -9.249 -1.781   C 5.468 49.44 0.583 51.298 0.181 52.332   Z  "
+       style="fill:#5d9122;fill-opacity:1" />
+  </g>
+  <g
+     id="logotype">
+    <title
+       id="title9">Logotype</title>
+    <text
+       id="logotype-source"
+       x="24.3664"
+       y="45"
+       display="none"
+       font-family="DejaVu Sans, sans-serif"
+       font-weight="400"
+       font-size="45.4">JS</text>
+    <path
+       id="logotype-outlines"
+       d="   M 28.801 11.998   h 4.475   v 30.769   C 33.425 50.966 29.903 54.714 22 54.153   v -3.766   c 5.335 0.419 6.879 -2.009 6.801 -7.621   C 28.801 42.767 28.801 11.998 28.801 11.998   Z    M 62 13.083   v 4.364   c -4.423 -2.211 -10.764 -3.649 -14.802 -0.997   c -2.309 1.407 -2.709 5.658 -0.665 7.344   c 1.024 1.114 5.453 1.923 7.698 2.359   c 3.337 0.635 5.8 1.754 7.387 3.356   c 3.48 3.269 3.112 11.034 -0.842 13.722   c -4.766 3.677 -13.955 2.762 -19.926 0.377   l 0 -4.609   c 5.284 3.267 17.855 5.951 18.475 -2.723   c 0.159 -4.919 -4.997 -5.64 -9.127 -6.402   c -3.338 -0.664 -5.753 -1.706 -7.244 -3.124   c -3.348 -3.04 -2.856 -10.149 0.853 -12.825   C 48.296 10.212 56.419 11.18 62 13.083   Z  "
+       style="fill:#5d9122;fill-opacity:1" />
+  </g>
+</svg>
