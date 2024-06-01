@@ -18,7 +18,17 @@ require "../private/header.php";
 </h1>
 
 <header>
-	<?php echo $event->render_metadata(); ?>
+	<div class="row">
+		<div class="col-12 col-md-6">
+		<?php echo $event->render_metadata(); ?>
+		</div>
+		<div class="col-12 col-md-6">
+			<?php
+			echo '<img class="img-fluid wide rounded" src="'.$event->gen_image_url_low().'">'
+			?>
+		</div>
+	</div>
+	
 </header>
 
 <?php require_once __DIR__ . "/../private/share_button.php"; ?>
