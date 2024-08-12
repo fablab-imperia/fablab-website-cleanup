@@ -20,7 +20,8 @@
 					Stefano:&nbsp;<a href="tel:+393493140191">+39 349 31.40.191 </a>
 				</p>
 				<p>
-					<i class="fa fa-lg fa-envelope"></i>  Email:&nbsp;<a href="mailto:info@fablabimperia.org">info@fablabimperia.org</a>
+					<!-- <i class="fa fa-lg fa-envelope"></i>  Email:&nbsp;<a href="mailto:info@fablabimperia.org">info@fablabimperia.org</a> -->
+					<i class="fa fa-lg fa-envelope"></i>  Email:&nbsp;<a href="mailto:fablabimperia@gmail.com">fablabimperia@gmail.com</a>
 				</p>
 				<p>
 				<i class="fa fa-lg fa-address-book"></i> PEC:&nbsp;<a href="mailto:fablabimperia@pec.it">fablabimperia@pec.it</a>
