@@ -20,8 +20,7 @@
 					Stefano:&nbsp;<a href="tel:+393493140191">+39 349 31.40.191 </a>
 				</p>
 				<p>
-					<!-- <i class="fa fa-lg fa-envelope"></i>  Email:&nbsp;<a href="mailto:info@fablabimperia.org">info@fablabimperia.org</a> -->
-					<i class="fa fa-lg fa-envelope"></i>  Email:&nbsp;<a href="mailto:fablabimperia@gmail.com">fablabimperia@gmail.com</a>
+					<i class="fa fa-lg fa-envelope"></i>  Email:&nbsp;<a href="mailto:info@fablabimperia.org">info@fablabimperia.org</a>
 				</p>
 				<p>
 				<i class="fa fa-lg fa-address-book"></i> PEC:&nbsp;<a href="mailto:fablabimperia@pec.it">fablabimperia@pec.it</a>
@@ -66,8 +65,7 @@
 		</div>
 		<hr>
 		<p class="imprint">
-		<!-- Associazione&nbsp;Fablab&nbsp;Imperia&nbsp;APS · C.F.:&nbsp;91043710085 · P.IVA:&nbsp;01665670087 · info@fablabimperia.org · pec:&nbsp;fablabimperia@pec.it -->
-		Associazione&nbsp;Fablab&nbsp;Imperia&nbsp;APS · C.F.:&nbsp;91043710085 · P.IVA:&nbsp;01665670087 · fablabimperia@gmail.com · pec:&nbsp;fablabimperia@pec.it
+		Associazione&nbsp;Fablab&nbsp;Imperia&nbsp;APS · C.F.:&nbsp;91043710085 · P.IVA:&nbsp;01665670087 · info@fablabimperia.org · pec:&nbsp;fablabimperia@pec.it
 		<br>
 	</p>
 </div>
