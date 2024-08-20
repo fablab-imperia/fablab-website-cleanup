@@ -24,7 +24,10 @@ require "../private/header.php";
 		</div>
 		<div class="col-12 col-md-6">
 			<?php
-			echo '<img class="img-fluid wide rounded" src="'.$event->gen_image_url_low().'">'
+			if (is_file($event->gen_image_url_low()))
+			{
+				echo '<img class="img-fluid wide rounded" src="'.$event->gen_image_url_low().'">';
+			}
 			?>
 		</div>
 	</div>
