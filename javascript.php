@@ -8,7 +8,9 @@ require "private/header.php";
 <main id="main_content">
 <div class="container" style="margin-top:4rem;">
 
-<h1>Licenze js utilizzato</h1>
+<h1>Licenze Javascript utilizzato</h1>
+<p>Questa tabella illustra le informazioni di licenze e Copyright del codice Javascript presente nel sito Fablab Imperia.
+</p>
 <table id="jslicense-labels1">
     <tr>
         <td><a href="/assets/scroll_into_main.js">scroll_into_main.js</a></td>
