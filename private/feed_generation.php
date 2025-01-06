@@ -16,6 +16,9 @@ function feed_generation()
 		),
 		$db->event_fetch_past()
 	);
+	$events = array_filter($events, function($el){
+		return $el->published;
+	});
 
 
 	// RSS
