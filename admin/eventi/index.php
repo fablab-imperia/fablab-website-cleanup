@@ -60,5 +60,4 @@ echo "</ul>"
 </main>
 <?php
 require "../../private/footer.php";
-require __DIR__ . "/../../private/feed_generation.php";
 ?>

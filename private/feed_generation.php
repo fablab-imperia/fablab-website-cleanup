@@ -24,7 +24,6 @@ function feed_generation()
 	$blog_posts = array_filter($blog_posts, function($el){
 		return $el->published;
 	});
-	var_dump($blog_posts);
 
 	$all = array_merge(
 		$events,
