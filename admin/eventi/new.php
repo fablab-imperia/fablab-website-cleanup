@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . "/../private/event_management.php";
-require __DIR__ . "/../private/database.php";
+require __DIR__ . "/../../private/event_management.php";
+require __DIR__ . "/../../private/database.php";
 ?>
 
 <?php
@@ -9,22 +9,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $obj = $_POST;
     $obj["event_timestamp"] = strtotime($obj["date"] . " " . $obj["time"]);
     $e = new Event($obj);
-    var_dump($e);
+    //var_dump($e);
     $db = new Database();
     $db->event_save($e);
-    require __DIR__ . "/../private/feed_generation.php";
-    header('Location: /admin/eventi.php');
+    require __DIR__ . "/../../private/feed_generation.php";
+    header('Location: /admin/eventi/');
 }
 ?>
 
 <?php
-require "../private/header.php";
+require "../../private/header.php";
 ?>
 
 <main>
 <div class="container">
 
-<?php require "./_admin_back_button.php"; ?>
+<p>
+    <a href="./"> <i class="fa fa-arrow-left"></i> Torna a pagina Eventi</a>
+</p>
 
 <h1>Aggiungi evento</h1> 
 
@@ -81,5 +83,5 @@ require "../private/header.php";
 </div>
 </main>
 <?php
-require "../private/footer.php";
+require "../../private/footer.php";
 ?>

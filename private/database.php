@@ -130,7 +130,7 @@ class Database
 
 	// ---------------
 	// Gestione BLOG
-	function blog_fetch_all()
+	function blog_fetch_all(): array
 	{
 		$st = $this->db_handle->prepare("SELECT * FROM BLOG ORDER BY creation_timestamp DESC;");
 		$res = $st->execute();
@@ -147,7 +147,7 @@ class Database
 		return $resulting_array;
 	}
 
-	function blog_fetch_one(int $id)
+	function blog_fetch_one(int $id): Blog
 	{
 		$st = $this->db_handle->prepare("SELECT * FROM BLOG WHERE id=? LIMIT 1;");
 		$st->bindValue(1, $id, SQLITE3_INTEGER);
@@ -165,6 +165,37 @@ class Database
 		}
 	}
 
+	function blog_save(Blog $blog_post)
+	{
+		// Se id è -1, vuol dire che devo aggiungerlo
+		// Se è impostato a qualcosa, devo aggiornarne i dati
+		if ($blog_post->id == -1 || !isset($blog_post->id))
+		{
+			$st = $this->db_handle->prepare(
+				"INSERT INTO BLOG(title, description, creation_timestamp, published, full_text) VALUES (?, ?, ?, ?, ?)"
+			);
+			$st->bindValue(1, $blog_post->title, SQLITE3_TEXT);
+			$st->bindValue(2, $blog_post->description, SQLITE3_TEXT);
+			$st->bindValue(3, $blog_post->creation_timestamp, SQLITE3_INTEGER);
+			$st->bindValue(4, $blog_post->published, SQLITE3_INTEGER);
+			$st->bindValue(5, $blog_post->full_text, SQLITE3_TEXT);
+			$st->execute();
+			$blog_post->id = $this->db_handle->lastInsertRowID();
+		}
+		else
+		{
+			$st = $this->db_handle->prepare(
+				"UPDATE BLOG SET title=?, description=?, creation_timestamp=?, published=?, full_text=? WHERE id=?"
+			);
+			$st->bindValue(1, $blog_post->title, SQLITE3_TEXT);
+			$st->bindValue(2, $blog_post->description, SQLITE3_TEXT);
+			$st->bindValue(3, $blog_post->creation_timestamp, SQLITE3_INTEGER);
+			$st->bindValue(4, $blog_post->published, SQLITE3_INTEGER);
+			$st->bindValue(5, $blog_post->full_text, SQLITE3_TEXT);
+			$st->bindValue(6, $blog_post->id, SQLITE3_INTEGER);
+			$res = $st->execute();
+		}
+	}
 
 
 	function __destruct()

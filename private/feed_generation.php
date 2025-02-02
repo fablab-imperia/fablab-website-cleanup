@@ -20,6 +20,17 @@ function feed_generation()
 		return $el->published;
 	});
 
+	$blog_posts = $db->blog_fetch_all();
+	$blog_posts = array_filter($blog_posts, function($el){
+		return $el->published;
+	});
+	var_dump($blog_posts);
+
+	$all = array_merge(
+		$events,
+		$blog_posts
+	);
+
 
 	// RSS
 	$rss = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
@@ -46,9 +57,8 @@ function feed_generation()
 			}
 			$st .= "  </item>\n";
 			return $st;
-		},$events)
+		},$all)
 	);
-
 	$rss .= "</channel>
 </rss>";
 	
@@ -71,7 +81,7 @@ function feed_generation()
 			$st .= "    <loc>" . BASE_URL . $e->generate_url() . "</loc>\n";
 			$st .= "  </url>\n";
 			return $st;
-		},$events)
+		},$all)
 	);
 	$sitemap .= "</urlset>";
 	file_put_contents(

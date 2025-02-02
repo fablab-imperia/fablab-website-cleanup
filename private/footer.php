@@ -52,7 +52,7 @@
 						<h2>Carica mappa</h2>
 							<div>
 								<p>
-									<label style="font-weight:bold;" for="field_accept_googlemaps_cookies">Accetto i cookies di Google Maps</label>
+									<label style="font-weight:bold;" for="field_accept_googlemaps_cookies">Accetto i <a href="https://cloud.google.com/maps-platform/terms">termini e condizioni</a> di Google Maps</label>
 									<input type="checkbox" required id="field_accept_googlemaps_cookies">
 								</p>
 							</div>

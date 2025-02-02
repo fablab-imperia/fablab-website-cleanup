@@ -13,20 +13,12 @@ require '../private/database.php';
     In questa sezione i soci Fablab Imperia possono pubblicare le proprie creazioni, opinioni o altri articoli.
 </p>
 
-<div class="card card-opaque">
-	<h2>
-	ZONA DEL SITO ATTUALMENTE IN MANUTENZIONE
-	</h2>
-	<p>Torna alla <a href="/">pagina iniziale</a></p>
-</div>
-
-<!-- 
 <div class="row">
 <?php
 $counter = 0;
 $db = new Database();
-$events = $db->blog_fetch_all();
-foreach ($events as $value)
+$posts = $db->blog_fetch_all();
+foreach ($posts as $value)
 {
 	if ($value->published)
 	{
@@ -38,11 +30,11 @@ foreach ($events as $value)
 }
 if ($counter == 0) {
 	echo '<p>';
-	echo 'Nessun post del blog!';
+	echo 'Abbiamo da poco rimesso online il blog e dobbiamo ancora aggiungere dei contenuti';
 	echo '</p>';
 }
 ?>
-</div> -->
+</div>
 
 
 </div>

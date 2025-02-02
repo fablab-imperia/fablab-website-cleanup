@@ -1,32 +1,33 @@
 <?php
-require __DIR__ . "/../private/event_management.php";
-require __DIR__ . "/../private/database.php";
+require __DIR__ . "/../../private/blog_management.php";
+require __DIR__ . "/../../private/database.php";
 ?>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $obj = $_POST;
-    $obj["event_timestamp"] = strtotime($obj["date"] . " " . $obj["time"]);
-    $e = new Event($obj);
-    var_dump($e);
+    $obj["creation_timestamp"] = strtotime($obj["date"] . " " . $obj["time"]);
+    $e = new Blog($obj);
     $db = new Database();
-    $db->event_save($e);
-    require __DIR__ . "/../private/feed_generation.php";
-    header('Location: /admin/eventi.php');
+    $db->blog_save($e);
+    require __DIR__ . "/../../private/feed_generation.php";
+    header('Location: /admin/blog.php');
 }
 ?>
 
 <?php
-require "../private/header.php";
+require "../../private/header.php";
 ?>
 
 <main>
 <div class="container">
 
-<?php require "./_admin_back_button.php"; ?>
+<p>
+    <a href="./"> <i class="fa fa-arrow-left"></i> Torna a pagina Blog</a>
+</p>
 
-<h1>Aggiungi evento</h1> 
+<h1>Aggiungi post nel Blog</h1> 
 
 
 <form method="post">
@@ -48,22 +49,7 @@ require "../private/header.php";
     </div>
 
     <div>
-        <label for="repeats">Si ripete ogni:</label>
-        <input type="text" name="repeats" id="repeats">
-    </div>
-
-    <div>
-        <label for="where_address">Luogo</label>
-        <input required type="text" name="where_address" id="where_address">
-    </div>
-
-    <div>
-        <label for="where_map_url">Link alla mappa</label>
-        <input type="text" name="where_map_url" id="where_map_url">
-    </div>
-
-    <div>
-        <label for="full_text">Programma dell'evento</label>
+        <label for="full_text">Testo del post</label>
         <textarea rows=10 cols=50 name="full_text" id="full_text"></textarea>
     </div>
 
@@ -81,5 +67,5 @@ require "../private/header.php";
 </div>
 </main>
 <?php
-require "../private/footer.php";
+require "../../private/footer.php";
 ?>

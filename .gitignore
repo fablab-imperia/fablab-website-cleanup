@@ -6,3 +6,5 @@ rss.xml
 sitemap.xml
 eventi/media/**
 !eventi/media/.gitkeep
+blog/media/**
+!blog/media/.gitkeep

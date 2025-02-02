@@ -5,7 +5,8 @@ class Blog
 	public int $id;
 	public string $title;
 	public string $description;
-	public int $reation_timestamp;
+	public int $creation_timestamp;
+	public bool $published;
 	public string $full_text;
 
 

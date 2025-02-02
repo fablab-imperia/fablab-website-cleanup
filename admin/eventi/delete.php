@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . "/../private/event_management.php";
-require __DIR__ . "/../private/database.php";
+require __DIR__ . "/../../private/event_management.php";
+require __DIR__ . "/../../private/database.php";
 ?>
 
 <?php
@@ -9,7 +9,7 @@ $ev = $db->event_fetch_one($_GET["id"]);
 
 if (!isset($ev))
 {
-    header('Location: /admin/eventi.php');
+    header('Location: /admin/eventi/');
     die;
 }
 
@@ -18,22 +18,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     if (isset($_POST["elimina"]))
     {
         $db->event_delete($_GET["id"]);
-        require __DIR__ . "/../private/feed_generation.php";
-        header('Location: /admin/eventi.php');
+        require __DIR__ . "/../../private/feed_generation.php";
+        header('Location: /admin/eventi/');
         die;
     }
 }
 
-require "../private/header.php";
+require "../../private/header.php";
 
 ?>
 
 <main>
 <div class="container">
 
-<?php require "./_admin_back_button.php"; ?>
-
-
+<p>
+    <a href="./"> <i class="fa fa-arrow-left"></i> Torna a pagina Eventi</a>
+</p>
 
 <h1>Eliminare evento "<?php echo $ev->title; ?>"?</h1>
 

@@ -1,33 +1,35 @@
 <?php
-require __DIR__ . "/../private/event_management.php";
-require __DIR__ . "/../private/database.php";
+require __DIR__ . "/../../private/event_management.php";
+require __DIR__ . "/../../private/database.php";
 
 $db = new Database();
 $cur_event = $db->event_fetch_one(intval($_GET["id"]));
 if (!isset($cur_event))
 {
-    header('Location: /admin/eventi.php');
+    header('Location: /admin/eventi/');
 }
 ?>
 
 
-<?php require "../private/header.php"; ?>
+<?php require "../../private/header.php"; ?>
 
 <main>
 <div class="container">
 
-<?php require "./_admin_back_button.php"; ?>
+<p>
+    <a href="./"> <i class="fa fa-arrow-left"></i> Torna a pagina Eventi</a>
+</p>
 
 <h1>Modifica evento</h1> 
 
 <p>
-    Anteprima evento <a class="btn" href="/admin/evento_upload_preview_img.php?id=<?php echo $cur_event->id?>" target="_blank" rel="noopener noreferrer">Carica <i class="fa fa-file-picture-o"></i></a>
+    Anteprima evento <a class="btn" href="/admin/eventi/upload_preview_img.php?id=<?php echo $cur_event->id?>" target="_blank" rel="noopener noreferrer">Carica <i class="fa fa-file-picture-o"></i></a>
 </p>
 
 <hr>
 
 
-<form method="post" action="/admin/evento_edit_do.php" autocomplete="off">
+<form method="post" action="/admin/eventi/edit_do.php" autocomplete="off">
     <input type="hidden" name="id" value="<?php echo $cur_event->id; ?>">    
     <div>
         <label for="title">Titolo</label>
@@ -81,7 +83,7 @@ if (!isset($cur_event))
 </form>
 
 <div style="margin-top:5rem;">
-    <a class="btn" href="/admin/evento_delete.php?id=<?php echo $cur_event->id; ?>">
+    <a class="btn" href="/admin/eventi/delete.php?id=<?php echo $cur_event->id; ?>">
     Elimina <i href="" class="fa fa-remove"></i>
     </a>
 </div>
@@ -94,5 +96,5 @@ if (!isset($cur_event))
 </div>
 </main>
 <?php
-require "../private/footer.php";
+require "../../private/footer.php";
 ?>
